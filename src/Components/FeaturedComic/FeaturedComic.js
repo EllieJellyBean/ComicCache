@@ -12,6 +12,7 @@ const FeaturedComic = ({ featuredComic }) => {
         <p className='title'>{title}</p>
       </div>
       <p className='description'>{description}</p>
+      <button className='buy-it-button'>buy it!</button>
     </aside>
   )
 }
