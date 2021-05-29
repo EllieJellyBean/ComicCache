@@ -3,6 +3,7 @@ import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
 import SingleComic from '../SingleComic/SingleComic';
 import { fetchAllComics } from '../../Utils/APICalls';
 import './App.css';
+import FeaturedComic from '../FeaturedComic/FeaturedComic'
 
 class App extends Component {
   constructor() {
@@ -24,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <FeaturedComic featuredComic={this.state.allComics[0]}/>
       </div>
     )
  }
