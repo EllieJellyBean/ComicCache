@@ -1,0 +1,10 @@
+.buy-it-button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+}
+
+.featured-comic {
+  width: 25vw;
+  height: 100vh;
+}

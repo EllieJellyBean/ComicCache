@@ -8,3 +8,7 @@
   padding: 2%;
   text-align: center;
 }
+
+body {
+  display: flex;
+}
