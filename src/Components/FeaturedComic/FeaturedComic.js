@@ -11,6 +11,7 @@ const FeaturedComic = ({ featuredComic }) => {
         <p className='author'>{author}</p>
         <p className='title'>{title}</p>
       </div>
+      <p className='description'>{description}</p>
     </aside>
   )
 }
