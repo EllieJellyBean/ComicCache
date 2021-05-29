@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const FeaturedComic = ({ featuredComic }) => {
-  console.log(featuredComic);
+  const { book_img, title, contributor, description, buy_links } = featuredComic;
   return (
     <aside className='featured-comic'>
       <h1>Title</h1>
