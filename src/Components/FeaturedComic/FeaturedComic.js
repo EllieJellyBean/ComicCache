@@ -1,10 +1,12 @@
 import React from 'react';
 
 const FeaturedComic = ({ featuredComic }) => {
-  const { book_img, title, contributor, description, buy_links } = featuredComic;
+  const { book_image, title, contributor, description, buy_links } = featuredComic;
+  console.log(featuredComic);
   return (
     <aside className='featured-comic'>
-      <h1>Title</h1>
+      <h3>top pick</h3>
+      <img className='featured-image' src={book_image} />
     </aside>
   )
 }
