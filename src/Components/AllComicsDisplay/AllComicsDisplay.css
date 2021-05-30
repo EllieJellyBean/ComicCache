@@ -1,7 +1,12 @@
-.comic-container {
+.comics-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  width: 75vw;
+}
+
+main {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-bottom: 1rem;
-  width: 95vw;
+  flex-direction: column;
 }

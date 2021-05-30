@@ -1,21 +1,29 @@
 import React from 'react';
-import SingleComic from '../SingleComic/SingleComic'
+import SingleComic from '../SingleComic/SingleComic';
+import './AllComicsDisplay.css';
+import { Link } from 'react-router-dom';
 
-const AllComicsDisplay = ({ comicsData }) => {
+const AllComicsDisplay = ({ comicsData, addToList }) => {
+
   const displayComics = () => {
     return comicsData.map(comic => {
-      return (
-        <SingleComic
-          key={comic.id}
-          comic={comic}
-        />
-      )
+      if(comic.rank !== 1){
+        return (
+          <SingleComic
+            key={comic.rank}
+            comic={comic}
+            addToList={addToList}
+          />
+        )
+      }
     })
   }
 
   return (
-    <div className='comic-container'>
-      {displayComics}
+    <div>
+      <section className='comics-container'>
+          {displayComics()}
+      </section>
     </div>
   )
 }
