@@ -20,7 +20,8 @@ class App extends Component {
       .then(comicsData => {
         (typeof comicsData === 'string') ?
           this.setState({ error: comicsData }) :
-          this.setState({ allComics: comicsData.results.books, featuredComic: comicsData.results.books[0] })
+          this.setState({ allComics: comicsData.results.books,
+                          featuredComic: comicsData.results.books[0] })
       })
   }
 
@@ -31,6 +32,11 @@ class App extends Component {
         <FeaturedComic featuredComic={this.state.featuredComic}/>
       </main>
     )
+  }
+
+  addComicToReadingList = (event) => {
+     const comicToAdd = this.state.allComics.find( comic => comic.rank === event.target.id)
+     this.setState({readingList: ...this.state.readingList, comicToAdd})
   }
 }
 
