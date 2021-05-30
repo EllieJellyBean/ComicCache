@@ -28,8 +28,10 @@ class App extends Component {
     return (
       <main className="App">
         <NavBar />
-        <AllComicsDisplay comicsData={this.state.allComics}/>
-        <FeaturedComic featuredComic={this.state.featuredComic}/>
+        <div className='main-container'>
+          <AllComicsDisplay comicsData={this.state.allComics}/>
+          <FeaturedComic featuredComic={this.state.featuredComic}/>
+        </div>
       </main>
     )
   }
