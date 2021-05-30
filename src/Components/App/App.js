@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <AllComicsDisplay comicsData={this.state.allComics}/>
+        <AllComicsDisplay comicsData={this.state.allComics} addToList={this.addComicToReadingList}/>
         <FeaturedComic featuredComic={this.state.featuredComic}/>
       </main>
     )
@@ -36,7 +36,7 @@ class App extends Component {
 
   addComicToReadingList = (event) => {
      const comicToAdd = this.state.allComics.find( comic => comic.rank === event.target.id)
-     this.setState({readingList: ...this.state.readingList, comicToAdd})
+     this.setState({readingList: comicToAdd})
   }
 }
 
