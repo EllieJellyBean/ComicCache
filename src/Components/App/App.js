@@ -3,6 +3,7 @@ import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
 import SingleComic from '../SingleComic/SingleComic';
 import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import { fetchAllComics } from '../../Utils/APICalls';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -28,8 +29,19 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <AllComicsDisplay comicsData={this.state.allComics} addToList={this.addComicToReadingList}/>
-        <FeaturedComic featuredComic={this.state.featuredComic}/>
+      <Route exact path ='/'
+              render={() => (
+                <div>
+                  <AllComicsDisplay comicsData={this.state.allComics} addToList={this.addComicToReadingList}/>
+                  <FeaturedComic featuredComic={this.state.featuredComic}/>
+                </div>
+              )}
+        />
+        <Route exact path ='/reading-list'
+                render={() => (
+                  <AllComicsDisplay comicsData={this.state.readingList}/>
+                )}
+        />
       </main>
     )
   }
