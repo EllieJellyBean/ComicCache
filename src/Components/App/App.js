@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
+import NavBar from '../NavBar/NavBar'
 import SingleComic from '../SingleComic/SingleComic';
 import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import { fetchAllComics } from '../../Utils/APICalls';
@@ -29,9 +30,10 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+        <NavBar />
         <Route exact path ='/'
           render={() => (
-            <div>
+            <div className='main-container'>
               <AllComicsDisplay comicsData={this.state.allComics} addToList={this.addComicToReadingList}/>
               <FeaturedComic featuredComic={this.state.featuredComic}/>
             </div>

@@ -5,7 +5,6 @@
 }
 
 .featured-comic {
-  border: 2px solid red;
   width: 25vw;
   height: 100vh;
   grid-column: 2;
