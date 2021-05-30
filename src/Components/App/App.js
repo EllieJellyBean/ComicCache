@@ -30,6 +30,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+        <NavBar />
         <Route exact path ='/'
           render={() => (
             <div className='main-container'>
