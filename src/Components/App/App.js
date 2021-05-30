@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-      <Route exact path ='/'
+        <Route exact path ='/'
               render={() => (
                 <div>
                   <AllComicsDisplay comicsData={this.state.allComics} addToList={this.addComicToReadingList}/>
@@ -39,7 +39,8 @@ class App extends Component {
         />
         <Route exact path ='/reading-list'
                 render={() => (
-                  <AllComicsDisplay comicsData={this.state.readingList}/>
+                  !this.state.readingList.length ? <h1>Sorry no comics in reading list</h1>
+                  : <AllComicsDisplay comicsData={this.state.readingList}/>
                 )}
         />
       </main>
