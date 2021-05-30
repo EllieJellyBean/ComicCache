@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './ComicDetails.css';
 
 const ComicDetails = ({ rank, foundComic }) => {
@@ -15,7 +14,6 @@ const ComicDetails = ({ rank, foundComic }) => {
       <h4 data-cy='comic-publisher' className='comic-publisher'>{`Publisher: ${publisher}`}</h4>
       <h4 data-cy='comic-description' className='description'>Comic Description:</h4>
       <h4 data-cy='comic-description' className='description'>{description}</h4>
-      <NavLink to='/'><button data-cy='home-button' className='home-button'>Back to Home</button></NavLink>
     </div>
     </article>
   )
