@@ -14,7 +14,6 @@ const NavBar = () => {
         <ul>home</ul>
       </Link>
     </nav>
-
   )
 }
 
