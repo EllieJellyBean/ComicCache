@@ -3,6 +3,7 @@ import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
 import NavBar from '../NavBar/NavBar'
 import SingleComic from '../SingleComic/SingleComic';
 import FeaturedComic from '../FeaturedComic/FeaturedComic'
+import ComicDetails from '../ComicDetails/ComicDetails'
 import { fetchAllComics } from '../../Utils/APICalls';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -49,6 +50,16 @@ class App extends Component {
                 <AllComicsDisplay comicsData={this.state.readingList}/>
               </div>
           )}
+        />
+        <Route path="/comic-details/:rank" render={({ match }) => {
+          const { rank } = match.params;
+          const foundComic = this.state.allComics[rank - 1];
+          
+          return <ComicDetails
+            rank={rank}
+            foundComic={foundComic}
+          />
+          }}
         />
       </main>
     )
