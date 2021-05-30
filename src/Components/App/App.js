@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
 import NavBar from '../NavBar/NavBar'
-import SingleComic from '../SingleComic/SingleComic';
 import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import ComicDetails from '../ComicDetails/ComicDetails'
 import { fetchAllComics } from '../../Utils/APICalls';
@@ -34,6 +33,7 @@ class App extends Component {
     return (
       <main className="App">
         <NavBar />
+        <Switch>
         <Route exact path ='/'
           render={() => (
             <div className='main-container'>
@@ -54,13 +54,14 @@ class App extends Component {
         <Route path="/comic-details/:rank" render={({ match }) => {
           const { rank } = match.params;
           const foundComic = this.state.allComics[rank - 1];
-          
+
           return <ComicDetails
             rank={rank}
             foundComic={foundComic}
           />
           }}
         />
+        </Switch>
       </main>
     )
   }
