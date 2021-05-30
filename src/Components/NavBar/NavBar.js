@@ -4,7 +4,7 @@ import './NavBar.css'
 const NavBar = () => {
   return (
     <nav>
-      <img className='logo' src='favicon.ico' alt='comic-cache-logo'/>
+      <h1>comic cache</h1>
       <ul>reading list</ul>
       <ul>home</ul>
     </nav>
