@@ -1,5 +1,4 @@
 body {
-  display: flex;
+  display: grid;
+  grid-template-columns: 70% 30%;
 }
-
-

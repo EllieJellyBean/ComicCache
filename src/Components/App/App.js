@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
 import SingleComic from '../SingleComic/SingleComic';
+import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import { fetchAllComics } from '../../Utils/APICalls';
 import './App.css';
-import FeaturedComic from '../FeaturedComic/FeaturedComic'
 
 class App extends Component {
   constructor() {
@@ -26,6 +26,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+        <AllComicsDisplay comicsData={this.state.allComics}/>
         <FeaturedComic featuredComic={this.state.featuredComic}/>
       </main>
     )
