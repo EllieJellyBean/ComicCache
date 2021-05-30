@@ -1,8 +1,9 @@
 import React from 'react';
 import SingleComic from '../SingleComic/SingleComic';
 import './AllComicsDisplay.css';
+import { Link } from 'react-router-dom';
 
-const AllComicsDisplay = ({ comicsData }) => {
+const AllComicsDisplay = ({ comicsData, addToList }) => {
 
   const displayComics = () => {
     return comicsData.map(comic => {
@@ -11,6 +12,7 @@ const AllComicsDisplay = ({ comicsData }) => {
           <SingleComic
             key={comic.rank}
             comic={comic}
+            addToList={addToList}
           />
         )
       }
@@ -18,9 +20,16 @@ const AllComicsDisplay = ({ comicsData }) => {
   }
 
   return (
-    <section className='comics-container'>
-      {displayComics()}
-    </section>
+    <div>
+      <Link to={'/reading-list'}>
+      <button>
+      View reading list
+      </button>
+      </Link>
+      <section className='comics-container'>
+          {displayComics()}
+      </section>
+    </div>
   )
 }
 
