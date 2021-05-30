@@ -30,18 +30,18 @@ class App extends Component {
     return (
       <main className="App">
         <Route exact path ='/'
-              render={() => (
-                <div>
-                  <AllComicsDisplay comicsData={this.state.allComics} addToList={this.addComicToReadingList}/>
-                  <FeaturedComic featuredComic={this.state.featuredComic}/>
-                </div>
-              )}
+          render={() => (
+            <div>
+              <AllComicsDisplay comicsData={this.state.allComics} addToList={this.addComicToReadingList}/>
+              <FeaturedComic featuredComic={this.state.featuredComic}/>
+            </div>
+          )}
         />
         <Route exact path ='/reading-list'
-                render={() => (
-                  !this.state.readingList.length ? <h1>Sorry no comics in reading list</h1>
-                  : <AllComicsDisplay comicsData={this.state.readingList}/>
-                )}
+          render={() => (
+            !this.state.readingList.length ? <h1>Sorry no comics in reading list</h1>
+            : <AllComicsDisplay comicsData={this.state.readingList}/>
+          )}
         />
       </main>
     )
@@ -50,7 +50,10 @@ class App extends Component {
   addComicToReadingList = (event) => {
      const readingList = this.state.readingList
      const comicToAdd = this.state.allComics.find( comic => comic.rank === parseInt(event.target.id))
+     if (!readingList.includes(comicToAdd)) {
+       console.log('hi')
      this.setState({readingList: [...readingList, comicToAdd]})
+   }
   }
 }
 
