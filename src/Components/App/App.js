@@ -35,8 +35,9 @@ class App extends Component {
   }
 
   addComicToReadingList = (event) => {
-     const comicToAdd = this.state.allComics.find( comic => comic.rank === event.target.id)
-     this.setState({readingList: comicToAdd})
+     const readingList = this.state.readingList
+     const comicToAdd = this.state.allComics.find( comic => comic.rank === parseInt(event.target.id))
+     this.setState({readingList: [...readingList, comicToAdd]})
   }
 }
 

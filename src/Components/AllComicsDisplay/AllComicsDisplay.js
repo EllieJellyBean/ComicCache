@@ -2,7 +2,7 @@ import React from 'react';
 import SingleComic from '../SingleComic/SingleComic';
 import './AllComicsDisplay.css';
 
-const AllComicsDisplay = ({ comicsData }) => {
+const AllComicsDisplay = ({ comicsData, addToList }) => {
 
   const displayComics = () => {
     return comicsData.map(comic => {
@@ -11,6 +11,7 @@ const AllComicsDisplay = ({ comicsData }) => {
           <SingleComic
             key={comic.rank}
             comic={comic}
+            addToList={addToList}
           />
         )
       }
