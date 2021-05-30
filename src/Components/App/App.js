@@ -54,8 +54,7 @@ class App extends Component {
      const readingList = this.state.readingList
      const comicToAdd = this.state.allComics.find( comic => comic.rank === parseInt(event.target.id))
      if (!readingList.includes(comicToAdd)) {
-       console.log('hi')
-     this.setState({readingList: [...readingList, comicToAdd]})
+      this.setState({readingList: [...readingList, comicToAdd]})
    }
   }
 }
