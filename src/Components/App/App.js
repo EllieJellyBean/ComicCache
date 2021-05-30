@@ -27,6 +27,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+        <NavBar />
         <AllComicsDisplay comicsData={this.state.allComics}/>
         <FeaturedComic featuredComic={this.state.featuredComic}/>
       </main>
