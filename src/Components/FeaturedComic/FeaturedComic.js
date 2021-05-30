@@ -7,7 +7,7 @@ const FeaturedComic = ({ featuredComic }) => {
   return (
     <aside className='featured-comic'>
       <h3>top pick</h3>
-      <img className='featured-image' src={book_image}/>
+      <img className='featured-image' src={book_image} alt={`comic cover for ${title}`}/>
       <div className='info-container'>
         <p className='title'>{title}</p>
         <p className='author'>{author}</p>
