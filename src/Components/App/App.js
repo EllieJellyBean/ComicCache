@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
+import NavBar from '../NavBar/NavBar'
 import SingleComic from '../SingleComic/SingleComic';
 import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import { fetchAllComics } from '../../Utils/APICalls';
