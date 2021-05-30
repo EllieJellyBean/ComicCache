@@ -21,11 +21,6 @@ const AllComicsDisplay = ({ comicsData, addToList }) => {
 
   return (
     <div>
-      <Link to={'/reading-list'}>
-      <button>
-      View reading list
-      </button>
-      </Link>
       <section className='comics-container'>
           {displayComics()}
       </section>
