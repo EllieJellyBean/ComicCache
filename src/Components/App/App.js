@@ -40,7 +40,10 @@ class App extends Component {
         <Route exact path ='/'
           render={() => (
             <div className='main-container'>
-              <AllComicsDisplay comicsData={this.state.allComics} addToList={this.addComicToReadingList}/>
+              <AllComicsDisplay comicsData={this.state.allComics}
+                                addToList={this.addComicToReadingList}
+                                readingList={this.state.readingList}
+                                />
               <FeaturedComic featuredComic={this.state.featuredComic}/>
             </div>
           )}
@@ -50,7 +53,7 @@ class App extends Component {
             !this.state.readingList.length ? <h1>Sorry no comics in reading list</h1>
             : <div>
                 <h1>Reading List</h1>
-                <AllComicsDisplay comicsData={this.state.readingList}/>
+                <AllComicsDisplay comicsData={this.state.readingList} readingList={this.state.readingList}/>
               </div>
           )}
         />

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './SingleComic.css';
 
-const SingleComic = ({ comic, addToList }) => {
+const SingleComic = ({ comic, addToList, isInReadingList }) => {
   const { title, book_image, rank } = comic;
 
   return (
@@ -11,6 +11,7 @@ const SingleComic = ({ comic, addToList }) => {
       <img className='comic-image' src={book_image} alt={`${title} poster`}/>
       <h2 className='title'>{title}</h2>
     </Link>
+      
       <button id={rank} onClick={addToList}>
       Add to reading list
       </button>
