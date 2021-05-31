@@ -4,7 +4,7 @@ describe('Homepage', () => {
     cy.intercept('https://api.nytimes.com/svc/books/v3/lists/manga.json?api-key=EGWgT37pIzbpuPsACX0SnMd3wKAwXhD9', { results: {
       books: [
         {
-          'title': 'A title',
+          'title': 'A Title',
           'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421589602.jpg',
         },
         {
@@ -18,8 +18,18 @@ describe('Homepage', () => {
   })
 
   it('should have a nav bar', () => {
-    cy.get('h1').contains('comic cache')
+    cy.get('nav').get('h1').contains('comic cache')
       .get('ul').contains('reading list')
       .get('ul').contains('home')
+      
+  })
+
+  it('should display a grid of top ranking comics', () => {
+    cy.get('.main-container').get('.comic-card').get('h2').contains('A Title')
+      .get('.comic-card').get('h2').contains('Different Title')
+  })
+
+  it('should have a button to add a single comic to reading list', () => {
+    
   })
 })
