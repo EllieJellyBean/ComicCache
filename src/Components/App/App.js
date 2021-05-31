@@ -53,7 +53,10 @@ class App extends Component {
             !this.state.readingList.length ? <h1>Sorry no comics in reading list</h1>
             : <div>
                 <h1>Reading List</h1>
-                <AllComicsDisplay comicsData={this.state.readingList} readingList={this.state.readingList}/>
+                <AllComicsDisplay comicsData={this.state.readingList}
+                                  readingList={this.state.readingList}
+                                  removeFromList={this.removeComicFromReadingList}
+                                  />
               </div>
           )}
         />
@@ -82,7 +85,8 @@ class App extends Component {
 }
 
   removeComicFromReadingList = (event) => {
-     const filteredList = this.state.readingList.filter(comic => comic.id != parseInt(event.target.id));
+     const filteredList = this.state.readingList.filter(comic => comic.rank != parseInt(event.target.id));
+     console.log(filteredList);
      this.setState({ readingList: filteredList });
      setTimeout(this.setLocalStorage, 50)
    }

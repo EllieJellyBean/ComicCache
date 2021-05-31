@@ -4,7 +4,7 @@ import './AllComicsDisplay.css';
 import { Link } from 'react-router-dom';
 let inReadingList;
 
-const AllComicsDisplay = ({ comicsData, addToList, readingList }) => {
+const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }) => {
 
   const displayComics = () => {
     return comicsData.map(comic => {
@@ -19,6 +19,7 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList }) => {
             key={comic.rank}
             comic={comic}
             addToList={addToList}
+            removeFromList={removeFromList}
             isInReadingList= {inReadingList}
           />
         )
