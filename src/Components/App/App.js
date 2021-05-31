@@ -74,8 +74,8 @@ class App extends Component {
      const comicToAdd = this.state.allComics.find( comic => comic.rank === parseInt(event.target.id))
      if (!readingList.includes(comicToAdd)) {
       this.setState({readingList: [...readingList, comicToAdd]})
+      localStorage.setItem('readingList', JSON.stringify(this.state.readingList));
    }
-   
   }
 }
 
