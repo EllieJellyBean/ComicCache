@@ -75,10 +75,14 @@ class App extends Component {
   addComicToReadingList = (event) => {
      const readingList = this.state.readingList
      const comicToAdd = this.state.allComics.find( comic => comic.rank === parseInt(event.target.id))
-     if (!readingList.includes(comicToAdd)) {
-      this.setState({readingList: [...readingList, comicToAdd]})
-   }
-   localStorage.setItem('readingList', JSON.stringify(this.state.readingList));
+       if (!readingList.includes(comicToAdd)) {
+        this.setState({readingList: [...readingList, comicToAdd]})
+        setTimeout(this.setLocalStorage, 50)
+  }
+}
+
+  setLocalStorage = () => {
+    localStorage.setItem('readingList', JSON.stringify(this.state.readingList))
   }
 }
 
