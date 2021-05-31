@@ -28,8 +28,8 @@ class App extends Component {
       })
       .catch(err => this.setState({ error: 'Something went wrong. Please try again later.'} ))
       if (localStorage.getItem('readingList')) {
-      this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) })
-    }
+        this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) })
+      }
   }
 
   render() {
@@ -51,7 +51,7 @@ class App extends Component {
         />
         <Route exact path ='/reading-list'
           render={() => (
-            !this.state.readingList.length ? <h1>Sorry no comics in reading list</h1>
+            !this.state.readingList.length ? <h1>No comics in reading list</h1>
             : <div>
                 <h1>Reading List</h1>
                 <AllComicsDisplay comicsData={this.state.readingList}
@@ -87,7 +87,6 @@ class App extends Component {
 
   removeComicFromReadingList = (event) => {
      const filteredList = this.state.readingList.filter(comic => comic.rank != parseInt(event.target.id));
-     console.log(filteredList);
      this.setState({ readingList: filteredList });
      setTimeout(this.setLocalStorage, 50)
    }
