@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
 import NavBar from '../NavBar/NavBar'
-import SingleComic from '../SingleComic/SingleComic';
 import FeaturedComic from '../FeaturedComic/FeaturedComic'
+import ComicDetails from '../ComicDetails/ComicDetails'
 import { fetchAllComics } from '../../Utils/APICalls';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -14,6 +14,7 @@ class App extends Component {
         allComics: [],
         featuredComic: [],
         readingList: [],
+        error: ''
       }
   }
 
@@ -25,12 +26,14 @@ class App extends Component {
           this.setState({ allComics: comicsData.results.books,
                           featuredComic: comicsData.results.books[0] })
       })
+      .catch(err => this.setState({ error: 'Something went wrong. Please try again later.'} ))
   }
 
   render() {
     return (
       <main className="App">
         <NavBar />
+        <Switch>
         <Route exact path ='/'
           render={() => (
             <div className='main-container'>
@@ -48,6 +51,17 @@ class App extends Component {
               </div>
           )}
         />
+        <Route path="/comic-details/:rank" render={({ match }) => {
+          const { rank } = match.params;
+          const foundComic = this.state.allComics[rank - 1];
+
+          return <ComicDetails
+            rank={rank}
+            foundComic={foundComic}
+          />
+          }}
+        />
+        </Switch>
       </main>
     )
   }
