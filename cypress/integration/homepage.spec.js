@@ -16,4 +16,10 @@ describe('Homepage', () => {
     })
       .visit('http://localhost:3000/')
   })
+
+  it('should have a nav bar', () => {
+    cy.get('h1').contains('comic cache')
+      .get('ul').contains('reading list')
+      .get('ul').contains('home')
+  })
 })
