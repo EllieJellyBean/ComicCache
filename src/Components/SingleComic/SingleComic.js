@@ -11,7 +11,7 @@ const SingleComic = ({ comic, addToList }) => {
       <img className='comic-image' src={book_image} alt={`${title} poster`}/>
       <h2 className='title'>{title}</h2>
     </Link>
-      <button id={rank} onClick={addToList}>
+      <button className='add-button' id={rank} onClick={addToList}>
       Add to reading list
       </button>
     </div>
