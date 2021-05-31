@@ -81,6 +81,12 @@ class App extends Component {
   }
 }
 
+  removeComicFromReadingList = (event) => {
+     const filteredList = this.state.readingList.filter(comic => comic.id != parseInt(event.target.id));
+     this.setState({ readingList: filteredList });
+     setTimeout(this.setLocalStorage, 50)
+   }
+
   setLocalStorage = () => {
     localStorage.setItem('readingList', JSON.stringify(this.state.readingList))
   }
