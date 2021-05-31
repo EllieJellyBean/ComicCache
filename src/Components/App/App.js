@@ -27,6 +27,9 @@ class App extends Component {
                           featuredComic: comicsData.results.books[0] })
       })
       .catch(err => this.setState({ error: 'Something went wrong. Please try again later.'} ))
+      if (localStorage.getItem('readingList')) {
+      this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) })
+    }
   }
 
   render() {
@@ -72,6 +75,7 @@ class App extends Component {
      if (!readingList.includes(comicToAdd)) {
       this.setState({readingList: [...readingList, comicToAdd]})
    }
+   
   }
 }
 
