@@ -43,6 +43,7 @@ class App extends Component {
               <AllComicsDisplay comicsData={this.state.allComics}
                                 addToList={this.addComicToReadingList}
                                 readingList={this.state.readingList}
+                                removeFromList={this.removeComicFromReadingList}
                                 />
               <FeaturedComic featuredComic={this.state.featuredComic}/>
             </div>
