@@ -30,6 +30,7 @@ describe('Homepage', () => {
   })
 
   it('should have a button to add a single comic to reading list', () => {
-    
+    cy.get('.comic-card').get('.add-button').contains('Add to reading list')
+      .click()
   })
 })
