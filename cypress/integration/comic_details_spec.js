@@ -26,4 +26,8 @@ describe('Show single comic details display of Comic Cache', () => {
     cy.get('article').find('.comic-details').should('have.length', 1)
   });
 
+  it('Should show the title on the comic details card', () => {
+    cy.get('.details-title').should('contain', 'ONE-PUNCH MAN, VOL. 10')
+  });
+
 });
