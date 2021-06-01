@@ -6,10 +6,14 @@ describe('Homepage', () => {
         {
           'title': 'A Title',
           'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421589602.jpg',
+          'author': 'An Author',
+          'description': 'An overview!'
         },
         {
           'title': 'Different Title',
-          'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421590158.jpg'
+          'author': 'Different Author',
+          'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421590158.jpg',
+          'description': 'Another overview!'
         }
       ]
     }
@@ -29,13 +33,15 @@ describe('Homepage', () => {
   });
 
   it('should have a button to add a single comic to reading list', () => {
-    cy.get('.comic-card').get('.add-button').contains('Add to reading list').should('be.visible')
+    cy.get('.comic-card').get('button').contains('Add to reading list').should('be.visible')
       .click()
   });
 
   it('should display a featured comic', () => {
     cy.get('aside').should('be.visible').contains('top pick')
       .get('img').should('be.visible')
-      .get('h2').should('be.visible').contains('A Title')
+      .get('p').should('be.visible').contains('A Title')
+      .get('p').should('be.visible').contains('An Author')
+      .get('.description').should('be.visible').contains('An overview!')
   });
 });
