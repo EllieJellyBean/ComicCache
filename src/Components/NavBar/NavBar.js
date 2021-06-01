@@ -8,10 +8,10 @@ const NavBar = () => {
     <nav>
       <h1>comic cache</h1>
       <Link to={'/reading-list'} style={linkStyle}>
-        <ul>reading list</ul>
+        <ul data-cy='readingList'>reading list</ul>
       </Link>
       <Link to='/' style={linkStyle}>
-        <ul>home</ul>
+        <ul data-cy='home'>home</ul>
       </Link>
     </nav>
   )
