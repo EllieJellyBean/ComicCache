@@ -16,4 +16,10 @@ describe('Show single comic details display of Comic Cache', () => {
     cy.url().should('eq', 'http://localhost:3000/comic-details/2')
   });
 
+  it('Should display the nav bar on the comic details display page upon loading', () => {
+  cy.contains('nav>h1', 'comic cache')
+    .get('[data-cy=readingList]').should('contain', 'reading list')
+    .get('[data-cy=home]').should('contain', 'home')
+});
+
 });
