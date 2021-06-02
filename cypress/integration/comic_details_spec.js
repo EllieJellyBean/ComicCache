@@ -26,6 +26,10 @@ describe('Show single comic details display of Comic Cache', () => {
     cy.get('article').find('.comic-details').should('have.length', 1)
   });
 
+  it('Should show the a back to home button above the comic details card', () => {
+    cy.get('[data-cy=home-button]').click()
+      .url().should('eq', 'http://localhost:3000/');
+  });
 
   it('Should show the title on the comic details card', () => {
     cy.get('[data-cy=details-title]').should('contain', 'THE ANCIENT MAGUS\' BRIDE, VOL. 6')
