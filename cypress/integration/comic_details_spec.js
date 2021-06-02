@@ -1,7 +1,7 @@
 describe('Show single comic details display of Comic Cache', () => {
 
   beforeEach(() => {
-    cy.fixture('comicDetailsMockData.json')
+    cy.fixture('comicsMockData.json')
       .then(mockData => {
         cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/manga.json?api-key=EGWgT37pIzbpuPsACX0SnMd3wKAwXhD9', {
           statusCode: 201,
@@ -26,8 +26,8 @@ describe('Show single comic details display of Comic Cache', () => {
     cy.get('article').find('.comic-details').should('have.length', 1)
   });
 
-  it('Should show the title on the comic details card', () => {
-    cy.get('.details-title').should('contain', 'ONE-PUNCH MAN, VOL. 10')
-  });
 
+  it('Should show the title on the comic details card', () => {
+    cy.get('[data-cy=details-title]').should('contain', 'THE ANCIENT MAGUS\' BRIDE, VOL. 6')
+  });
 });
