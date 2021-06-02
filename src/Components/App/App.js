@@ -40,11 +40,12 @@ class App extends Component {
         <Route exact path ='/'
           render={() => (
             <div className='main-container'>
-              <AllComicsDisplay comicsData={this.state.allComics}
-                                addToList={this.addComicToReadingList}
-                                readingList={this.state.readingList}
-                                removeFromList={this.removeComicFromReadingList}
-                                />
+              <AllComicsDisplay
+                comicsData={this.state.allComics}
+                addToList={this.addComicToReadingList}
+                readingList={this.state.readingList}
+                removeFromList={this.removeComicFromReadingList}
+              />
               <FeaturedComic featuredComic={this.state.featuredComic}/>
             </div>
           )}
@@ -54,10 +55,11 @@ class App extends Component {
             !this.state.readingList.length ? <h1>No comics in reading list</h1>
             : <div>
                 <h1>Reading List</h1>
-                <AllComicsDisplay comicsData={this.state.readingList}
-                                  readingList={this.state.readingList}
-                                  removeFromList={this.removeComicFromReadingList}
-                                  />
+                <AllComicsDisplay
+                  comicsData={this.state.readingList}
+                  readingList={this.state.readingList}
+                  removeFromList={this.removeComicFromReadingList}
+                />
               </div>
           )}
         />
@@ -67,7 +69,7 @@ class App extends Component {
 
           return <ComicDetails
             rank={rank}
-            foundComic={foundComic}
+            readingList={this.state.readingList}
             addComicToReadingList={this.addComicToReadingList}
           />
           }}
