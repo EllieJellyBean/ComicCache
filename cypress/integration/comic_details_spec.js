@@ -54,4 +54,9 @@ describe('Show single comic details display of Comic Cache', () => {
   it('Should show the publisher on the comic details card', () => {
     cy.get('[data-cy=comic-publisher]').should('contain', 'VIZ Media')
   });
+
+  it('Should show the description on the comic details card', () => {
+    cy.get('[data-cy=comic-description]')
+      .should('contain', 'Saitama sneaks into a combat tournament in order to hone his martial arts skills.')
+  });
 });
