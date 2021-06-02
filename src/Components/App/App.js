@@ -68,6 +68,7 @@ class App extends Component {
           return <ComicDetails
             rank={rank}
             foundComic={foundComic}
+            addComicToReadingList={this.addComicToReadingList}
           />
           }}
         />
@@ -86,7 +87,7 @@ class App extends Component {
 }
 
   removeComicFromReadingList = (event) => {
-     const filteredList = this.state.readingList.filter(comic => comic.rank != parseInt(event.target.id));
+     const filteredList = this.state.readingList.filter(comic => comic.rank !== parseInt(event.target.id));
      this.setState({ readingList: filteredList });
      setTimeout(this.setLocalStorage, 50)
    }
