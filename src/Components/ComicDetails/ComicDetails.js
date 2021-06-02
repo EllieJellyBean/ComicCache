@@ -7,7 +7,7 @@ class ComicDetails extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        rank: props.rank,
+        rank: props.rank - 1,
         comicsData: [],
         error: '',
         foundComic: {}
