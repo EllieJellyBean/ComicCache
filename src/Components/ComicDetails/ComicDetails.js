@@ -38,7 +38,7 @@ class ComicDetails extends Component {
           <h4 data-cy='comic-publisher' className='comic-publisher'>{`Publisher: ${publisher}`}</h4>
           <h4 className='description'>Comic Description:</h4>
           <h4 data-cy='comic-description' className='description'>{description}</h4>
-          <button id={this.state.rank} onClick={this.props.addComicToReadingList}> Add to reading list</button>
+          <button data-cy='list-button' id={this.state.rank} onClick={this.props.addComicToReadingList}>Add to Reading List</button>
         </div>
       </article>
     )
