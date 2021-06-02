@@ -32,15 +32,19 @@ describe('Show single comic details display of Comic Cache', () => {
   });
 
   it('Should show the title on the comic details card', () => {
-    cy.get('[data-cy=details-title]').should('contain', 'THE ANCIENT MAGUS\' BRIDE, VOL. 6')
+    cy.get('[data-cy=details-title]').should('contain', 'ONE-PUNCH MAN, VOL. 10')
   });
 
   it('Should show a movie poster image on the movie details card', () => {
-    cy.get('img').should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9781626923508.jpg')
+    cy.get('img').should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9781421590158.jpg')
   });
 
   it('Should possess an alt description for the screen reader or broken image', () => {
     cy.get('img').should('have.attr', 'alt');
+  });
+
+  it('Should show the author on the comic details card', () => {
+    cy.get('[data-cy=comic-author]').should('contain', 'ONE and Yusuke Murata')
   });
 
 });
