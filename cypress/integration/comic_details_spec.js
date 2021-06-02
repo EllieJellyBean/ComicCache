@@ -47,4 +47,8 @@ describe('Show single comic details display of Comic Cache', () => {
     cy.get('[data-cy=comic-author]').should('contain', 'ONE and Yusuke Murata')
   });
 
+  it('Should show the contributor on the comic details card', () => {
+    cy.get('[data-cy=comic-contributor]').should('contain', 'by ONE and Yusuke Murata')
+  });
+
 });
