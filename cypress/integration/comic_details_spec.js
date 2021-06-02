@@ -51,4 +51,7 @@ describe('Show single comic details display of Comic Cache', () => {
     cy.get('[data-cy=comic-contributor]').should('contain', 'by ONE and Yusuke Murata')
   });
 
+  it('Should show the publisher on the comic details card', () => {
+    cy.get('[data-cy=comic-publisher]').should('contain', 'VIZ Media')
+  });
 });
