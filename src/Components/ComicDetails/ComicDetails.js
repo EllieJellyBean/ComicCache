@@ -15,6 +15,7 @@ const ComicDetails = (props) => {
         <h4 data-cy='comic-publisher' className='comic-publisher'>{`Publisher: ${foundComic.publisher}`}</h4>
         <h4 data-cy='comic-description' className='description'>Comic Description:</h4>
         <h4 data-cy='comic-description' className='description'>{foundComic.description}</h4>
+        <button id={rank} onClick={addComicToReadingList}> Add to reading list</button>
       </div>
     </article>
   )
