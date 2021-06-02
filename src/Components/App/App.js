@@ -65,7 +65,6 @@ class App extends Component {
         />
         <Route path="/comic-details/:rank" render={({ match }) => {
           const { rank } = match.params;
-          const foundComic = this.state.allComics[rank - 1];
 
           return <ComicDetails
             rank={rank}
