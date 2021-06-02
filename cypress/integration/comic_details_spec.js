@@ -61,7 +61,7 @@ describe('Show single comic details display of Comic Cache', () => {
   });
 
   it('Should show the a back to add to reading list button above the comic details card', () => {
-    cy.get('[data-cy=list-button]').should('contain', 'Add to reading list');
+    cy.get('[data-cy=list-button]').should('contain', 'Add to Reading List');
   });
 
   // Add test here for reading list addition && error handling test
