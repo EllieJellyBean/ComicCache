@@ -7,6 +7,7 @@ const ComicDetails = (props) => {
 
   return (
     <article className='details-display'>
+      <NavLink to='/'><button data-cy='home-button' className='home-button'>Back to Home</button></NavLink>
       <div className='comic-details'>
         <h2 data-cy='details-title' className='details-title'>{foundComic.title}</h2>
         <img className='details-image' src={foundComic.book_image} alt={`comic cover for ${foundComic.title}`}/>
