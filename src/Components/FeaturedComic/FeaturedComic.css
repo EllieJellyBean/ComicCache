@@ -10,7 +10,7 @@
   grid-column: 2;
 }
 
-@media screen and (min-width: 426px) and (max-width: 800px) {
+@media screen and (min-width: 426px) and (max-width: 830px) {
   .featured-comic {
     width: 25vw;
     height: 100vh;

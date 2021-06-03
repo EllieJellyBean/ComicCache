@@ -11,9 +11,14 @@ main {
   flex-direction: column;
 }
 
-@media screen and (min-width: 426px) and (max-width: 800px) {
+@media screen and (min-width: 701px) and (max-width: 830px) {
   .comics-container {
-    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 700px) {
+  .comics-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media only screen and (max-width: 425px) {

@@ -19,22 +19,40 @@
   font-size: 1.5vh;
 }
 
-@media screen and (min-width: 426px) and (max-width: 800px) {
+@media screen and (min-width: 701px) and (max-width: 830px) {
   .comic-card {
-    height: 20rem;
-    width: 12rem;
+    height: 18rem;
+    width: 11rem;
+  }
+
+  .comic-image {
+    height: 13rem;
+    width: 9rem;
   }
 }
+
+@media screen and (min-width: 426px) and (max-width: 700px) {
+  .comic-card {
+    height: 24rem;
+    width: 15rem;
+  }
+
+  .comic-image {
+    height: 17rem;
+    width: 13rem;
+  }
+}
+
 @media only screen and (max-width: 425px) {
   .comic-card {
-    height: 30rem;
-    width: 24rem;
+    height: 110vw;
+    width: 85vw;
     margin-left: 1vw;
   }
 
   .comic-image {
-    height: 24rem;
-    width: 21rem;
+    height: 90vw;
+    width: 70vw;
     margin-left: 2vw;
   }
 }
