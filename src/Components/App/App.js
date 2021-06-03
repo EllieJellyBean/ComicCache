@@ -40,11 +40,12 @@ class App extends Component {
         <Route exact path ='/'
           render={() => (
             <div className='main-container'>
-              <AllComicsDisplay comicsData={this.state.allComics}
-                                addToList={this.addComicToReadingList}
-                                readingList={this.state.readingList}
-                                removeFromList={this.removeComicFromReadingList}
-                                />
+              <AllComicsDisplay
+                comicsData={this.state.allComics}
+                addToList={this.addComicToReadingList}
+                readingList={this.state.readingList}
+                removeFromList={this.removeComicFromReadingList}
+              />
               <FeaturedComic featuredComic={this.state.featuredComic}/>
             </div>
           )}
@@ -54,20 +55,21 @@ class App extends Component {
             !this.state.readingList.length ? <h1>No comics in reading list</h1>
             : <div>
                 <h1>Reading List</h1>
-                <AllComicsDisplay comicsData={this.state.readingList}
-                                  readingList={this.state.readingList}
-                                  removeFromList={this.removeComicFromReadingList}
-                                  />
+                <AllComicsDisplay
+                  comicsData={this.state.readingList}
+                  readingList={this.state.readingList}
+                  removeFromList={this.removeComicFromReadingList}
+                />
               </div>
           )}
         />
         <Route path="/comic-details/:rank" render={({ match }) => {
           const { rank } = match.params;
-          const foundComic = this.state.allComics[rank - 1];
 
           return <ComicDetails
             rank={rank}
-            foundComic={foundComic}
+            readingList={this.state.readingList}
+            addComicToReadingList={this.addComicToReadingList}
           />
           }}
         />
@@ -86,7 +88,7 @@ class App extends Component {
 }
 
   removeComicFromReadingList = (event) => {
-     const filteredList = this.state.readingList.filter(comic => comic.rank != parseInt(event.target.id));
+     const filteredList = this.state.readingList.filter(comic => comic.rank !== parseInt(event.target.id));
      this.setState({ readingList: filteredList });
      setTimeout(this.setLocalStorage, 50)
    }

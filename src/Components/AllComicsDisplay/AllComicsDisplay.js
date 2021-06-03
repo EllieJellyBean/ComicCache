@@ -1,7 +1,6 @@
 import React from 'react';
 import SingleComic from '../SingleComic/SingleComic';
 import './AllComicsDisplay.css';
-import { Link } from 'react-router-dom';
 let inReadingList;
 
 const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }) => {
