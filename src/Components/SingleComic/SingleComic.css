@@ -18,3 +18,21 @@
 .title {
   font-size: 1.5vh;
 }
+
+@media screen and (min-width: 426px) and (max-width: 800px) {
+  .comic-card {
+    height: 20rem;
+    width: 12rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .comic-card {
+    height: 29rem;
+    width: 21rem;
+  }
+
+  .comic-image {
+    height: 23rem;
+    width: 19rem;
+  }
+}
