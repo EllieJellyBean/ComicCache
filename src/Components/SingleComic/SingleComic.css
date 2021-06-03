@@ -40,40 +40,55 @@
   height: 1em;
 }
 
-@media screen and (min-width: 701px) and (max-width: 830px) {
+@media screen and (min-width: 810px) and (max-width: 880px) {
   .comic-card {
-    height: 18rem;
-    width: 11rem;
+    height: 22rem;
+    width: 14rem;
   }
 
   .comic-image {
-    height: 13rem;
-    width: 9rem;
+    height: 16rem;
+    width: 12rem;
   }
 }
 
-@media screen and (min-width: 426px) and (max-width: 700px) {
+@media screen and (min-width: 621px) and (max-width: 809px) {
   .comic-card {
-    height: 24rem;
-    width: 15rem;
+    height: 55vw;
+    width: 40vw;
   }
 
   .comic-image {
-    height: 17rem;
-    width: 13rem;
+    height: 43vw;
+    width: 32vw;
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media screen and (min-width: 351px) and (max-width: 620px) {
   .comic-card {
-    height: 110vw;
-    width: 85vw;
-    margin-left: 1vw;
+    height: 100vw;
+    width: 65vw;
+    margin-left: 12vw;
   }
 
   .comic-image {
-    height: 90vw;
-    width: 70vw;
+    height: 75vw;
+    width: 55vw;
+    margin-left: 2vw;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+
+  .comic-card {
+    height: 100vw;
+    width: 65vw;
+    margin-left: 5vw;
+  }
+
+  .comic-image {
+    height: 75vw;
+    width: 55vw;
     margin-left: 2vw;
   }
 }
