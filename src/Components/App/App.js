@@ -11,19 +11,18 @@ import './App.css';
 class App extends Component {
   constructor() {
     super()
-      this.state = {
-        allComics: [],
-        featuredComic: [],
-        readingList: [],
-        error: ''
-      }
+    this.state = {
+      allComics: [],
+      featuredComic: [],
+      readingList: [],
+      error: ''
+    }
   }
 
   componentDidMount = () => {
     fetchAllComics()
       .then(comicsData => {
-        const allComicsData = filterComicData(comicsData)
-        console.log(allComicsData);
+        const allComicsData = filterComicData(comicsData);
         (typeof comicsData === 'string') ? 
         this.setState({ error: allComicsData }) :
         this.setState({ allComics: allComicsData, featuredComic: allComicsData[0] })
