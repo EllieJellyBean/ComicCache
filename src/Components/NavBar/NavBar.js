@@ -9,10 +9,16 @@ const NavBar = () => {
       <img className='icon' src='newicon.png' />
       <div className='link-container'>
         <Link to='/' style={linkStyle}>
-          <i class="fas fa-home fa-1x"></i><p>HOME</p>
+          <div className='nav-icon-container'>
+            <i className='fas fa-home fa-1x'></i>
+            <p>HOME</p>
+          </div>
         </Link>
         <Link to={'/reading-list'} style={linkStyle}>
-        <i class="fas fa-book-open fa-1x"></i><p className='reading-list-header'>READING LIST</p>
+          <div className='nav-icon-container'>
+            <i className='fas fa-book-open fa-1x'></i>
+            <p className='reading-list-header'>READING LIST</p>
+          </div>
         </Link>
       </div>
     </nav>
