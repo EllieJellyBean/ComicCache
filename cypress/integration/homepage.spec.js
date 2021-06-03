@@ -1,30 +1,34 @@
-describe('Homepage', () => {
+describe('Display Homepage', () => {
 
   beforeEach(() => {
-    cy.intercept('https://api.nytimes.com/svc/books/v3/lists/manga.json?api-key=EGWgT37pIzbpuPsACX0SnMd3wKAwXhD9', { results: {
-      books: [
-        {
-          'title': 'A Title',
-          'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421589602.jpg',
-          'author': 'An Author',
-          'description': 'An overview!'
-        },
-        {
-          'title': 'Different Title',
-          'author': 'Different Author',
-          'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421590158.jpg',
-          'description': 'Another overview!'
-        }
-      ]
-    }
+    cy.fixture('comicsMockData.json')
+      .then(mockData => {
+        cy.intercept('https://api.nytimes.com/svc/books/v3/lists/manga.json?api-key=EGWgT37pIzbpuPsACX0SnMd3wKAwXhD9', { mockData })
+    //   results: { books: [
+    //     {
+    //       'title': 'A Title',
+    //       'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421589602.jpg',
+    //       'author': 'An Author',
+    //       'description': 'An overview!'
+    //     },
+    //     {
+    //       'title': 'Different Title',
+    //       'author': 'Different Author',
+    //       'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421590158.jpg',
+    //       'description': 'Another overview!'
+    //     }
+    //   ]
+    // }
     })
       .visit('http://localhost:3000/')
   })
 
   it('should have a nav bar', () => {
-    cy.get('nav').get('h1').contains('comic cache')
-      .get('ul').contains('reading list')
-      .get('ul').contains('home')  
+    cy.get('nav>img').should('be.visible')
+      .get('.fa-home').should('be.visible')
+      .get('.nav-text').should('contain', 'HOME')
+      .get('.fa-book-open').should('be.visible')
+      .get('.reading-list-header').should('contain', 'READING LIST') 
   });
 
   it('should display a grid of top ranking comics', () => {
