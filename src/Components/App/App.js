@@ -42,7 +42,7 @@ class App extends Component {
     <Link to='/featured-comic' style={linkStyle}>
       <div className='nav-icon-container'>
         <i className='fas fa-star fa-1x'></i>
-        <p>FEATURED COMIC</p>
+        <p className='nav-text'>FEATURED COMIC</p>
       </div>
     </Link>
     return (
@@ -122,7 +122,6 @@ class App extends Component {
   }
 
   updateSize = () => {
-    console.log(window.innerWidth)
     this.setState({ isMobile: window.innerWidth < 975 });
   }
 

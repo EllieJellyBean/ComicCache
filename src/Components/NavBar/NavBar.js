@@ -10,7 +10,7 @@ const NavBar = ({ linkStyle, featuredComicButton }) => {
         <Link to='/' style={linkStyle}>
           <div className='nav-icon-container'>
             <i className='fas fa-home fa-1x'></i>
-            <p>HOME</p>
+            <p className='nav-text'>HOME</p>
           </div>
         </Link>
         <Link to={'/reading-list'} style={linkStyle}>
