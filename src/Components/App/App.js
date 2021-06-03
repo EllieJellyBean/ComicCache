@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
-import ComicDetails from '../ComicDetails/ComicDetails'
-import FeaturedComic from '../FeaturedComic/FeaturedComic'
+import './App.css';
+import ComicDetails from '../ComicDetails/ComicDetails';
+import FeaturedComic from '../FeaturedComic/FeaturedComic';
 import { fetchAllComics } from '../../Utils/APICalls';
 import { filterComicData, getFeaturedComic } from '../../Utils/cleaningFunctions';
-import NavBar from '../NavBar/NavBar'
-import { Switch, Route } from 'react-router-dom';
-import './App.css';
+// import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
+import NavBar from '../NavBar/NavBar';
+import { Switch, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
     super()
-    this.state = {
-      allComics: [],
-      featuredComic: [],
-      readingList: [],
-      error: ''
-    }
+      this.state = {
+        allComics: [],
+        featuredComic: [],
+        readingList: [],
+        error: '',
+        isMobile: false,
+      }
   }
 
   componentDidMount = () => {
@@ -30,25 +32,40 @@ class App extends Component {
       })
       .catch(err => this.setState({ error: 'Something went wrong. Please try again later.'} ))
       if (localStorage.getItem('readingList')) {
-        this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) 
-      })
-    }
+        this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) })
+      }
+      window.addEventListener("resize", this.updateSize);
+      window.addEventListener("load", this.updateSize);
   }
 
   render() {
+    const linkStyle = {textDecoration: 'none', color: 'black'};
+    const featuredComicButton =
+    <Link to='/featured-comic' style={linkStyle}>
+      <div className='nav-icon-container'>
+        <i className='fas fa-star fa-1x'></i>
+        <p className='nav-text'>FEATURED COMIC</p>
+      </div>
+    </Link>
     return (
       <main className="App">
-        <NavBar />
+      {this.state.isMobile ?
+        <NavBar featuredComicButton={featuredComicButton} linkStyle={linkStyle}/>
+       :<NavBar linkStyle={linkStyle}/>
+      }
         <Switch>
         <Route exact path ='/'
           render={() => (
             <div className='main-container'>
-              <AllComicsDisplay
-                comicsData={this.state.allComics}
-                addToList={this.addComicToReadingList}
-                readingList={this.state.readingList}
-              />
-              <FeaturedComic featuredComic={this.state.featuredComic}/>
+              <AllComicsDisplay comicsData={this.state.allComics}
+                                addToList={this.addComicToReadingList}
+                                readingList={this.state.readingList}
+                                removeFromList={this.removeComicFromReadingList}
+                                />
+              {!this.state.isMobile &&
+                <FeaturedComic featuredComic={this.state.featuredComic}/>
+              }
+
             </div>
           )}
         />
@@ -69,6 +86,13 @@ class App extends Component {
                   removeFromList={this.removeComicFromReadingList}
                 />
               </div>
+          )}
+        />
+        <Route exact path ='/featured-comic'
+          render={() => (
+            <div>
+              <FeaturedComic featuredComic={this.state.featuredComic}/>
+            </div>
           )}
         />
         <Route path="/comic-details/:rank" render={({ match }) => {
@@ -103,6 +127,14 @@ class App extends Component {
 
   setLocalStorage = () => {
     localStorage.setItem('readingList', JSON.stringify(this.state.readingList))
+  }
+
+  updateSize = () => {
+    this.setState({ isMobile: window.innerWidth < 975 });
+  }
+
+  showMenu = () => {
+    this.setState({ menuIsVisible: !this.state.menuIsVisible });
   }
 }
 
