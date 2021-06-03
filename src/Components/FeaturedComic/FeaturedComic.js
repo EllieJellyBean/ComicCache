@@ -9,8 +9,8 @@ const FeaturedComic = ({ featuredComic }) => {
       <div className='left-container'>
         <h3 classname='top-pick'>TOP PICK</h3>
         <div className='info-container'>
-          <p className='title'>{title}</p>
           <p className='author'>{author}</p>
+          <p className='title'>{title}</p>
         </div>
         <button className='buy-it-button'>buy it!</button>
       </div>

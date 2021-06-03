@@ -1,19 +1,35 @@
 .buy-it-button {
   color: white;
-  border: none;
-  width: 5em;
-  height: 2em;
+  border: solid white 2px;
+  width: 8em;
+  height: 3em;
+  border-radius: 50px;
+  margin-top: 10em;
+  background-color: #A30115;;
 }
 
 .featured-comic {
   display: flex;
-  text-align: center;
   width: 40vw;
   height: 85vh;
   grid-column: 2;
   box-sizing: border-box;
   background-color: #A30115;
   color: white;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+}
+
+.info-container {
+  margin-top: 6em;
+}
+
+.title {
+  font-family: 'Alfa Slab One';
 }
 
 .featured-image {
