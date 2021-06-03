@@ -9,3 +9,15 @@
   height: 100vh;
   grid-column: 2;
 }
+
+@media screen and (min-width: 426px) and (max-width: 800px) {
+  .featured-comic {
+    width: 25vw;
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .featured-comic {
+    display: none;
+  }
+}
