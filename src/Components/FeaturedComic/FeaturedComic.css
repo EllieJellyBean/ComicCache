@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-around;
   width: 45vw;
-  height: 90vh;
+  height: 90vw;
   box-sizing: border-box;
   background-color: #DB3A34;
   color: #FFFFFF;
@@ -70,4 +70,15 @@
 h3 {
   font-family: 'Passion One', cursive;
   font-size: 30px;
+}
+
+@media screen and (min-width: 426px) and (max-width: 830px) {
+  .featured-comic {
+    width: 25vw;
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .featured-comic {
+  }
 }

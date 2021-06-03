@@ -3,16 +3,16 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: #FFC857;
-  height: 18vh;
+  height: 15vw;
 }
 
 .icon {
-  height: 100px;
-  width: 100px;
-  margin-left: 3em;
+  height: 8vw;
+  width: 8vw;
+  margin-left: 3vw;
 }
 
-.reading-list-header,
+
 .fas {
   color:#323031
 }
@@ -33,10 +33,11 @@ nav {
   display: flex;
   align-items: center;
 }
-
+.fa-star,
 .fa-home,
 .fa-book-open {
   margin-right: 0.30em;
+  font-size: 2vw;
 }
 
 .icon:hover {
@@ -50,5 +51,52 @@ nav {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 974px) {
+
+  .fa-book-open,
+  .fa-home,
+  .fa-book-open {
+    margin-left: 2vw;
+  }
+
+  .link-container {
+    margin-right: 7vw;
+    width: 50vw;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 850px) {
+
+  .reading-list-header,
+  .nav-text {
+    font-size: 1.7vw;
+  }
+
+  .link-container {
+    margin-right: 7vw;
+    width: 50vw;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 499px) {
+
+  .reading-list-header,
+  .nav-text {
+    font-size: 10px;
+  }
+
+  .link-container {
+    margin-right: 7vw;
+    width: 264px;
+  }
+
+  .fa-star,
+  .fa-home,
+  .fa-book-open {
+    margin-right: 2vw;
+    font-size: 11px;
   }
 }
