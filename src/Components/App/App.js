@@ -24,13 +24,15 @@ class App extends Component {
       .then(comicsData => {
         const allComicsData = filterComicData(comicsData);
         (typeof comicsData === 'string') ? 
-        this.setState({ error: allComicsData }) :
-        this.setState({ allComics: allComicsData, featuredComic: allComicsData[0] })
+          this.setState({ error: allComicsData }) :
+          this.setState({ allComics: allComicsData, featuredComic: allComicsData[0] 
+        })
       })
       .catch(err => this.setState({ error: 'Something went wrong. Please try again later.'} ))
       if (localStorage.getItem('readingList')) {
-        this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) })
-      }
+        this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) 
+      })
+    }
   }
 
   render() {
