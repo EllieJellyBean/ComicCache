@@ -56,6 +56,11 @@ main {
 }
 
 @media screen and (min-width: 351px) and (max-width: 620px) {
+
+  .header-container {
+    margin-left: 4em;
+  }
+
     .comics-container {
       grid-template-columns: repeat(1, 1fr);
       width: 100%;
@@ -64,7 +69,7 @@ main {
 }
 
 @media only screen and (max-width: 350px) {
-  
+
   .comics-container {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
