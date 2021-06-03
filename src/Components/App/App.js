@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
-import NavBar from '../NavBar/NavBar'
-import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import ComicDetails from '../ComicDetails/ComicDetails'
+import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import { fetchAllComics } from '../../Utils/APICalls';
+import { filterComicData, getFeaturedComic } from '../../Utils/cleaningFunctions';
+import NavBar from '../NavBar/NavBar'
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -21,10 +22,11 @@ class App extends Component {
   componentDidMount = () => {
     fetchAllComics()
       .then(comicsData => {
-        (typeof comicsData === 'string') ?
-          this.setState({ error: comicsData }) :
-          this.setState({ allComics: comicsData.results.books,
-                          featuredComic: comicsData.results.books[0] })
+        const allComicsData = filterComicData(comicsData)
+        console.log(allComicsData);
+        (typeof comicsData === 'string') ? 
+        this.setState({ error: allComicsData }) :
+        this.setState({ allComics: allComicsData, featuredComic: allComicsData[0] })
       })
       .catch(err => this.setState({ error: 'Something went wrong. Please try again later.'} ))
       if (localStorage.getItem('readingList')) {
