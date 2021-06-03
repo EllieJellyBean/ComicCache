@@ -30,7 +30,12 @@ main {
   margin-top: 2em;
 }
 
-.top-header {
+.top-header,
+.list-header {
   font-size: 28px;
   letter-spacing: 0.9px;
+}
+
+.list-header {
+  font-size: 20px;
 }
