@@ -1,3 +1,8 @@
 .main-container {
   display: flex;
 }
+
+.hamburger-icon {
+  height: 6vw;
+  width: 6vw;
+}

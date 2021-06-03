@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <main className="App">
         <NavBar />
-        <img className='hamburger-icon' src={book_image} alt={`${title} poster`}/>
+        <img className='hamburger-icon' src={hamburger} alt={`dropdown menu button`}/>
         <Switch>
         <Route exact path ='/'
           render={() => (
