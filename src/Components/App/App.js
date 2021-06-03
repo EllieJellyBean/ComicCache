@@ -40,7 +40,9 @@ class App extends Component {
     const linkStyle = {textDecoration: 'none', color: 'black'};
     const featuredComicButton =
     <Link to='/featured-comic' style={linkStyle}>
-    <p>featuredComic</p>
+      <div className='nav-icon-container'>
+        <p>featuredComic</p>
+      </div>
     </Link>
     return (
       <main className="App">
