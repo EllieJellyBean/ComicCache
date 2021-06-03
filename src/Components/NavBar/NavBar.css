@@ -17,10 +17,26 @@ nav {
   color:#323031
 }
 
+.fa-plus {
+  color: #DB3A34;
+}
+
 .link-container {
   display: flex;
   justify-content: space-around;
-  width: 15em;
+  align-self: flex-start;
+  width: 18em;
+  margin-top: 0.5em;
+}
+
+.nav-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.fa-home,
+.fa-book-open {
+  margin-right: 0.30em;
 }
 
 .icon:hover {
