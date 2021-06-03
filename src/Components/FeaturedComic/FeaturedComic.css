@@ -1,42 +1,73 @@
 .buy-it-button {
+  font-family: 'Passion One', cursive;
   color: white;
-  border: solid white 2px;
-  width: 8em;
-  height: 3em;
+  font-size: 18px;
+  border: none;
+  width: 5em;
+  height: 2em;
   border-radius: 50px;
-  margin-top: 10em;
-  background-color: #A30115;;
+  margin-top: 4em;
+  background-color: #323031;
 }
 
 .featured-comic {
   display: flex;
+  justify-content: space-around;
   width: 40vw;
   height: 85vh;
-  grid-column: 2;
   box-sizing: border-box;
-  background-color: #A30115;
-  color: white;
+  background-color: #DB3A34;
+  color: #FFFFFF;
 }
 
 .left-container {
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  width: 11em;
+  margin-left: 1em;
+  height: 100vh;
+}
+
+.right-container {
+  width: 15em;
+  margin-left: 1em;
+  justify-content: center;
+  margin-right: 1em;
+}
+
+.left-container,
+.right-container {
+  margin-top: 1em;
+}
+
+.description {
+  overflow-wrap: break-word;
+
+}
+
+.featured-title {
+  font-family: 'Passion One', cursive;
+  font-size: 15px;
+  letter-spacing: 0.5px;
 }
 
 .info-container {
-  margin-top: 6em;
+  margin-top: 11em;
 }
 
-.title {
-  font-family: 'Alfa Slab One';
+.title,
+.buy-it-button {
+  margin-left: 5px;
 }
 
 .featured-image {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
   width: 250px;
   height: 375px;
 }
 
 h3 {
-  font-family: 'Alfa Slab One', cursive;
+  font-family: 'Passion One', cursive;
+  font-size: 30px;
 }
