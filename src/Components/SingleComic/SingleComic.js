@@ -14,7 +14,7 @@ const SingleComic = ({ comic, addToList, removeFromList, isInReadingList }) => {
         </Link>
         <h2 className='comic-title'>{title}</h2>
         <div className='plus-icon-container'>
-          <i class="fas fa-plus" id={rank} onClick={addToList}></i>
+          <i className='fas fa-plus' id={rank} onClick={addToList}></i>
           <p className='reading-list'>add to reading list</p>
         </div>
       </div>
