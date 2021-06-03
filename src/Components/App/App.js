@@ -47,7 +47,6 @@ class App extends Component {
                 comicsData={this.state.allComics}
                 addToList={this.addComicToReadingList}
                 readingList={this.state.readingList}
-                removeFromList={this.removeComicFromReadingList}
               />
               <FeaturedComic featuredComic={this.state.featuredComic}/>
             </div>
@@ -55,9 +54,15 @@ class App extends Component {
         />
         <Route exact path ='/reading-list'
           render={() => (
-            !this.state.readingList.length ? <h1>No comics in reading list</h1>
-            : <div>
-                <h1>Reading List</h1>
+            !this.state.readingList.length ? 
+              <div className='header-container'>
+                <h3 className='list-header'>No comics in reading list!</h3>
+              </div>
+             : 
+              <div>
+                <div className='header-container'>
+                  <h3 className='list-header'>Reading List</h3>
+                </div>
                 <AllComicsDisplay
                   comicsData={this.state.readingList}
                   readingList={this.state.readingList}
