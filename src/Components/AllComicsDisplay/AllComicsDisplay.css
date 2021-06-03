@@ -10,3 +10,14 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (min-width: 426px) and (max-width: 800px) {
+  .comics-container {
+    grid-gap: 5px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .comics-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
