@@ -17,6 +17,7 @@ class App extends Component {
         readingList: [],
         error: '',
         isMobile: false,
+        menuIsVisible: false,
       }
   }
 
@@ -106,6 +107,9 @@ class App extends Component {
     this.setState({ isMobile: window.innerWidth > 200 });
   }
 
+  showMenu = () => {
+    this.setState({ menuIsVisible: !this.statemenuIsVisible });
+  }
 }
 
 export default App;
