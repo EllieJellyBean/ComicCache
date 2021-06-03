@@ -22,19 +22,6 @@
   letter-spacing: 1px;
 }
 
-.header-container {
-  background-color: #323031;
-  border-radius: 50px;
-  color: #FFFFFF;
-  width: 14em;
-  height: 3em;
-}
-
-.top-header {
-  font-size: 28px;
-  letter-spacing: 0.9px;
-}
-
 .reading-list {
   font-size: 13px;
   margin-left: 0.5em;
