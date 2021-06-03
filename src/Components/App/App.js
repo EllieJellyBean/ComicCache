@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
 import NavBar from '../NavBar/NavBar'
+import HamburgerMenu from '../HamburgerMenu/HamburgerMenu'
 import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import ComicDetails from '../ComicDetails/ComicDetails'
 import { fetchAllComics } from '../../Utils/APICalls';
@@ -34,6 +35,7 @@ class App extends Component {
         this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) })
       }
       window.addEventListener("resize", this.updateSize);
+      window.addEventListener("load", this.updateSize);
   }
 
   render() {
@@ -44,7 +46,7 @@ class App extends Component {
        :<NavBar />
       }
       {this.state.menuIsVisible &&
-        <NavBar />
+        <HamburgerMenu />
       }
         <Switch>
         <Route exact path ='/'
@@ -55,7 +57,10 @@ class App extends Component {
                                 readingList={this.state.readingList}
                                 removeFromList={this.removeComicFromReadingList}
                                 />
-              <FeaturedComic featuredComic={this.state.featuredComic}/>
+              {!this.state.isMobile &&
+                <FeaturedComic featuredComic={this.state.featuredComic}/>
+              }
+
             </div>
           )}
         />
@@ -69,6 +74,13 @@ class App extends Component {
                                   removeFromList={this.removeComicFromReadingList}
                                   />
               </div>
+          )}
+        />
+        <Route exact path ='/featured-comic'
+          render={() => (
+            <div>
+              <FeaturedComic featuredComic={this.state.featuredComic}/>
+            </div>
           )}
         />
         <Route path="/comic-details/:rank" render={({ match }) => {
@@ -106,7 +118,8 @@ class App extends Component {
   }
 
   updateSize = () => {
-    this.setState({ isMobile: window.innerWidth < 475 });
+    console.log(window.innerWidth)
+    this.setState({ isMobile: window.innerWidth < 830 });
   }
 
   showMenu = () => {

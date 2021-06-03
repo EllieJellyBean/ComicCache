@@ -27,12 +27,14 @@
 }
 @media only screen and (max-width: 425px) {
   .comic-card {
-    height: 20rem;
-    width: 14rem;
+    height: 30rem;
+    width: 24rem;
+    margin-left: 1vw;
   }
 
   .comic-image {
-    height: 14rem;
-    width: 12rem;
+    height: 24rem;
+    width: 21rem;
+    margin-left: 2vw;
   }
 }
