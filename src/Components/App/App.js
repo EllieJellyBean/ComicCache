@@ -39,11 +39,13 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-      {this.state.isMobile ? (
-        <NavBar />
-      ) : (
+      {this.state.isMobile ?
         <img onClick={this.showMenu} className='hamburger-icon' src={hamburger} alt={`dropdown menu button`}/>
-      )}
+       :<NavBar />
+      }
+      {this.state.menuIsVisible &&
+        <NavBar />
+      }
         <Switch>
         <Route exact path ='/'
           render={() => (
@@ -104,11 +106,11 @@ class App extends Component {
   }
 
   updateSize = () => {
-    this.setState({ isMobile: window.innerWidth > 200 });
+    this.setState({ isMobile: window.innerWidth < 475 });
   }
 
   showMenu = () => {
-    this.setState({ menuIsVisible: !this.statemenuIsVisible });
+    this.setState({ menuIsVisible: !this.state.menuIsVisible });
   }
 }
 
