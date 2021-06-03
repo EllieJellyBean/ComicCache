@@ -15,7 +15,8 @@ class App extends Component {
         allComics: [],
         featuredComic: [],
         readingList: [],
-        error: ''
+        error: '',
+        isMobile: false,
       }
   }
 
@@ -31,13 +32,17 @@ class App extends Component {
       if (localStorage.getItem('readingList')) {
         this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) })
       }
+      window.addEventListener("resize", this.updateSize);
   }
 
   render() {
     return (
       <main className="App">
+      {this.state.isMobile ? (
         <NavBar />
-        <img className='hamburger-icon' src={hamburger} alt={`dropdown menu button`}/>
+      ) : (
+        <img onClick={this.showMenu} className='hamburger-icon' src={hamburger} alt={`dropdown menu button`}/>
+      )}
         <Switch>
         <Route exact path ='/'
           render={() => (
@@ -96,6 +101,11 @@ class App extends Component {
   setLocalStorage = () => {
     localStorage.setItem('readingList', JSON.stringify(this.state.readingList))
   }
+
+  updateSize = () => {
+    this.setState({ isMobile: window.innerWidth > 200 });
+  }
+
 }
 
 export default App;
