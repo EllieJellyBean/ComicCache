@@ -6,17 +6,17 @@ const NavBar = () => {
   const linkStyle = {textDecoration: 'none', color: 'black'};
   return (
     <nav>
-      <h1>comic cache</h1>
-      <Link to={'/reading-list'} style={linkStyle}>
-        <ul>reading list</ul>
-      </Link>
-      <Link to='/' style={linkStyle}>
-        <ul>home</ul>
-      </Link>
+      <img className='icon' src='newicon.png' />
+      <div className='link-container'>
+        <Link to='/' style={linkStyle}>
+          <i class="fas fa-home fa-1x"></i><p>HOME</p>
+        </Link>
+        <Link to={'/reading-list'} style={linkStyle}>
+        <i class="fas fa-book-open fa-1x"></i><p className='reading-list-header'>READING LIST</p>
+        </Link>
+      </div>
     </nav>
   )
 }
-
-
 
 export default NavBar;
