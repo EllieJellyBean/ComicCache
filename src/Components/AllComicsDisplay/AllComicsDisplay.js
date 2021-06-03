@@ -1,7 +1,6 @@
 import React from 'react';
 import SingleComic from '../SingleComic/SingleComic';
 import './AllComicsDisplay.css';
-import { Link } from 'react-router-dom';
 let inReadingList;
 
 const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }) => {
@@ -29,6 +28,9 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }
 
   return (
     <div>
+      <div className='header-container'>
+        <h3 className='top-header'>TOP 9 THIS WEEK</h3>
+      </div>
       <section className='comics-container'>
           {displayComics()}
       </section>
