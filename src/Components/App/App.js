@@ -6,7 +6,6 @@ import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import ComicDetails from '../ComicDetails/ComicDetails'
 import { fetchAllComics } from '../../Utils/APICalls';
 import { Switch, Route } from 'react-router-dom';
-import hamburger from '../../hamburger-menu.png'
 import './App.css';
 
 class App extends Component {
@@ -18,7 +17,6 @@ class App extends Component {
         readingList: [],
         error: '',
         isMobile: false,
-        menuIsVisible: false,
       }
   }
 
@@ -42,11 +40,8 @@ class App extends Component {
     return (
       <main className="App">
       {this.state.isMobile ?
-        <img onClick={this.showMenu} className='hamburger-icon' src={hamburger} alt={`dropdown menu button`}/>
-       :<NavBar />
-      }
-      {this.state.menuIsVisible &&
         <HamburgerMenu />
+       :<NavBar />
       }
         <Switch>
         <Route exact path ='/'

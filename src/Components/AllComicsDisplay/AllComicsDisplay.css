@@ -35,7 +35,7 @@ main {
   letter-spacing: 0.9px;
 }
 
-@media screen and (min-width: 701px) and (max-width: 975px) {
+@media screen and (min-width: 701px) and (max-width: 974px) {
   .comics-container {
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
