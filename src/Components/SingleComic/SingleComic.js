@@ -4,7 +4,7 @@ import './SingleComic.css';
 
 const SingleComic = ({ comic, addToList, removeFromList, isInReadingList }) => {
   const { title, book_image, rank } = comic;
-
+  
   if(!isInReadingList) {
     const linkStyle = {textDecoration: 'none', color: 'black'};
     return (
