@@ -120,7 +120,7 @@ class App extends Component {
 
   updateSize = () => {
     console.log(window.innerWidth)
-    this.setState({ isMobile: window.innerWidth < 830 });
+    this.setState({ isMobile: window.innerWidth < 975 });
   }
 
   showMenu = () => {
