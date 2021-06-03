@@ -1,13 +1,14 @@
 .comic-card {
   box-sizing: border-box;
-  border: 3px solid #008080;
   padding: 10px;
-  height: 20rem;
-  width: 12rem;
+  height: 22rem;
+  width: 11rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  /* align-items: stretch; */
+  background-color: #FFFFFF;
+  text-align: center;
 }
 
 .comic-image {
@@ -15,6 +16,40 @@
   width: 10rem;
 }
 
-.title {
-  font-size: 1.5vh;
+.comic-title {
+  font-family: 'Passion One', cursive;
+  font-size: 15px;
+  letter-spacing: 1px;
 }
+
+.header-container {
+  background-color: #323031;
+  border-radius: 50px;
+  color: #FFFFFF;
+  width: 14em;
+  height: 3em;
+}
+
+.top-header {
+  font-size: 28px;
+  letter-spacing: 0.9px;
+}
+
+.reading-list {
+  font-size: 13px;
+  margin-left: 0.5em;
+}
+
+.comic-title,
+.reading-list {
+  color: #323031;
+}
+
+.plus-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10em;
+  height: 1em;
+}
+
