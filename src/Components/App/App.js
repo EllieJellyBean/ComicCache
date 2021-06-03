@@ -5,6 +5,7 @@ import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import ComicDetails from '../ComicDetails/ComicDetails'
 import { fetchAllComics } from '../../Utils/APICalls';
 import { Switch, Route } from 'react-router-dom';
+import hamburger from '../../hamburger-menu.png'
 import './App.css';
 
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
     return (
       <main className="App">
         <NavBar />
+        <img className='hamburger-icon' src={book_image} alt={`${title} poster`}/>
         <Switch>
         <Route exact path ='/'
           render={() => (
