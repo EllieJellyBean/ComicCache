@@ -1,11 +1,25 @@
 .buy-it-button {
-  background-color: #e63946;
   color: white;
   border: none;
+  width: 5em;
+  height: 2em;
 }
 
 .featured-comic {
-  width: 25vw;
-  height: 100vh;
+  text-align: center;
+  width: 40vw;
+  height: 85vh;
   grid-column: 2;
+  box-sizing: border-box;
+  background-color: #A30115;
+  color: white;
+}
+
+.featured-image {
+  width: 250px;
+  height: 375px;
+}
+
+h3 {
+  font-family: 'Alfa Slab One', cursive;
 }
