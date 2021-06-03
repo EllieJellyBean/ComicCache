@@ -5,7 +5,7 @@ import HamburgerMenu from '../HamburgerMenu/HamburgerMenu'
 import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import ComicDetails from '../ComicDetails/ComicDetails'
 import { fetchAllComics } from '../../Utils/APICalls';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -37,11 +37,16 @@ class App extends Component {
   }
 
   render() {
+    const linkStyle = {textDecoration: 'none', color: 'black'};
+    const featuredComicButton =
+    <Link to='/featured-comic' style={linkStyle}>
+    <p>featuredComic</p>
+    </Link>
     return (
       <main className="App">
       {this.state.isMobile ?
-        <HamburgerMenu />
-       :<NavBar />
+        <NavBar featuredComicButton={featuredComicButton} linkStyle={linkStyle}/>
+       :<NavBar linkStyle={linkStyle}/>
       }
         <Switch>
         <Route exact path ='/'

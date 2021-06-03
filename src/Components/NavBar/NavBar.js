@@ -2,8 +2,7 @@ import React from 'react';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
 
-const NavBar = () => {
-  const linkStyle = {textDecoration: 'none', color: 'black'};
+const NavBar = ({ linkStyle, featuredComicButton }) => {
   return (
     <nav>
       <img className='icon' src='newicon.png' />
@@ -20,6 +19,7 @@ const NavBar = () => {
             <p className='reading-list-header'>READING LIST</p>
           </div>
         </Link>
+        {featuredComicButton}
       </div>
     </nav>
   )
