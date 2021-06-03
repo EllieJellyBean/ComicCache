@@ -1,8 +1,54 @@
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFC857;
+  height: 18vh;
 }
 
-ul:hover {
-  color: goldenrod;
+.icon {
+  height: 100px;
+  width: 100px;
+  margin-left: 3em;
+}
+
+.reading-list-header,
+.fas {
+  color:#323031
+}
+
+.fa-plus {
+  color: #DB3A34;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-around;
+  align-self: flex-start;
+  width: 18em;
+  margin-top: 0.5em;
+}
+
+.nav-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.fa-home,
+.fa-book-open {
+  margin-right: 0.30em;
+}
+
+.icon:hover {
+  transition: 2s;
+  transform: rotate(360deg);
+}
+
+@keyframes img {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
