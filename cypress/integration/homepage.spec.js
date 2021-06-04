@@ -59,7 +59,7 @@ describe('Display Homepage', () => {
       .get('.reading-list').should('contain', 'remove from reading list')
   });
 
-  it('should add a comic to the reading list and display it in the "reading list" section when plus icon is clicked', () => {
+  it('should add a comic to the reading list, and a user should be able to view the reading list when READING LIST is clicked in nav bar', () => {
     cy.get('.fa-plus:first').click()
       .get('.fa-book-open').click()
       .url().should('eq', 'http://localhost:3000/reading-list')
@@ -68,6 +68,20 @@ describe('Display Homepage', () => {
         .get('.comic-card').should('contain', 'ONE-PUNCH MAN, VOL. 10')
         .should('contain', 'remove from reading list')
         .get('.fa-minus').should('be.visible')
+  })
+
+  it('should remove a comic from the reading list when minus icon is clicked', () => {
+    cy.get('.fa-plus:first').click()
+      .get('.fa-book-open').click()
+      .get('.fa-minus').click()
+      .get('.comics-container').should('have.length', 0)
+      .get('.header-container').should('be.visible').should('contain', 'No comics in reading list!')
+  })
+
+  it('should take a user back to the homepage when they click HOME in the nav bar', () => {
+      cy.get('.fa-book-open').click()
+        .get('.fa-home').click()
+          .url().should('eq', 'http://localhost:3000/')
   })
 
   // it('should display a featured comic', () => {
