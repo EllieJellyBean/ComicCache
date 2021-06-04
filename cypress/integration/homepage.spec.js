@@ -47,14 +47,21 @@ describe('Display Homepage', () => {
         .should('contain', 'BUY IT')
   })
 
-  it('should take a user to another url when BUY IT button is clicked', () => {
+  // it('should take a user to another url when BUY IT button is clicked', () => {
+  //   cy.get('.buy-it-button').click()
+  // })
+
+  // ^^^^ not sure on how to test navigating to an external link, and having a hard time finding solid documentation
+
+  it('should change from "add to reading list" to "remove from reading list" when plus icon is clicked', () => {
+    cy.get('.fa-plus:first').click()
+      .get('.fa-minus').should('be.visible')
+      .get('.reading-list').should('contain', 'remove from reading list')
+  });
+
+  it('should add a comic to the reading list and display it in the "reading list" section when plus icon is clicked', () => {
     
   })
-
-  // it('should have a button to add a single comic to reading list', () => {
-  //   cy.get('.comic-card').get('button').contains('Add to reading list').should('be.visible')
-  //     .click()
-  // });
 
   // it('should display a featured comic', () => {
   //   cy.get('aside').should('be.visible').contains('top pick')
