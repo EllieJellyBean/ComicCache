@@ -25,6 +25,17 @@ describe('Display Homepage', () => {
       .get('div>section>div').should('have.length', 9)
   });
 
+  it('should display a comic cover, title, and add to reading list button', () => {
+    cy.get('.comic-card').should('be.visible')
+      .get('.comic-image').should('be.visible')
+      .get('.comic-title').should('be.visible')
+      .get('.plus-icon-container > i').should('be.visible')
+      .get('.plus-icon-container > p').should('be.visible')
+      .get('.comic-card:first').get('.comic-title').should('contain', 'ONE-PUNCH MAN, VOL. 10')
+      .get('.plus-icon-container:first').should('contain', 'add to reading list')
+     
+  })
+
   // it('should have a button to add a single comic to reading list', () => {
   //   cy.get('.comic-card').get('button').contains('Add to reading list').should('be.visible')
   //     .click()
