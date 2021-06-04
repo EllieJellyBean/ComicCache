@@ -60,7 +60,14 @@ describe('Display Homepage', () => {
   });
 
   it('should add a comic to the reading list and display it in the "reading list" section when plus icon is clicked', () => {
-    
+    cy.get('.fa-plus:first').click()
+      .get('.fa-book-open').click()
+      .url().should('eq', 'http://localhost:3000/reading-list')
+      .get('.header-container').should('contain', 'Reading List')
+      .get('.comics-container').should('have.length', 1)
+        .get('.comic-card').should('contain', 'ONE-PUNCH MAN, VOL. 10')
+        .should('contain', 'remove from reading list')
+        .get('.fa-minus').should('be.visible')
   })
 
   // it('should display a featured comic', () => {
