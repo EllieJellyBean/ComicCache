@@ -83,12 +83,4 @@ describe('Display Homepage', () => {
         .get('.fa-home').click()
           .url().should('eq', 'http://localhost:3000/')
   })
-
-  // it('should display a featured comic', () => {
-  //   cy.get('aside').should('be.visible').contains('top pick')
-  //     .get('img').should('be.visible')
-  //     .get('p').should('be.visible').contains('A Title')
-  //     .get('p').should('be.visible').contains('An Author')
-  //     .get('.description').should('be.visible').contains('An overview!')
-  // });
 })
