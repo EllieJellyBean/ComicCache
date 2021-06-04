@@ -1,8 +1,13 @@
 import React from 'react';
 import './FeaturedComic.css';
+import { Link } from 'react-router-dom';
 
 const FeaturedComic = ({ featuredComic }) => {
   const { book_image, title, author, description, buy_links } = featuredComic;
+
+  const handleClick = () => {
+    window.open(buy_links.url)
+  }
 
   return (
     <aside className='featured-comic'>
@@ -13,7 +18,7 @@ const FeaturedComic = ({ featuredComic }) => {
           <p className='author'>{author}</p>
           <p className='featured-title'>{title}</p>
         </div>
-        <button className='buy-it-button'>BUY IT</button>
+        <button className='buy-it-button'onClick={handleClick}>BUY IT</button>
       </div>
       <div className='right-container'>
         <img className='featured-image' src={book_image} alt={`comic cover for ${title}`}/>
@@ -22,5 +27,6 @@ const FeaturedComic = ({ featuredComic }) => {
     </aside>
   )
 }
+
 
 export default FeaturedComic;

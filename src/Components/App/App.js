@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
-import NavBar from '../NavBar/NavBar'
-import HamburgerMenu from '../HamburgerMenu/HamburgerMenu'
-import FeaturedComic from '../FeaturedComic/FeaturedComic'
-import ComicDetails from '../ComicDetails/ComicDetails'
-import { fetchAllComics } from '../../Utils/APICalls';
-import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
+import ComicDetails from '../ComicDetails/ComicDetails';
+import FeaturedComic from '../FeaturedComic/FeaturedComic';
+import { fetchAllComics } from '../../Utils/APICalls';
+import { filterComicData, getFeaturedComic } from '../../Utils/cleaningFunctions';
+// import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
+import NavBar from '../NavBar/NavBar';
+import { Switch, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -23,10 +24,11 @@ class App extends Component {
   componentDidMount = () => {
     fetchAllComics()
       .then(comicsData => {
-        (typeof comicsData === 'string') ?
-          this.setState({ error: comicsData }) :
-          this.setState({ allComics: comicsData.results.books,
-                          featuredComic: comicsData.results.books[0] })
+        const allComicsData = filterComicData(comicsData);
+        (typeof comicsData === 'string') ? 
+          this.setState({ error: allComicsData }) :
+          this.setState({ allComics: allComicsData, featuredComic: allComicsData[0] 
+        })
       })
       .catch(err => this.setState({ error: 'Something went wrong. Please try again later.'} ))
       if (localStorage.getItem('readingList')) {
@@ -69,9 +71,15 @@ class App extends Component {
         />
         <Route exact path ='/reading-list'
           render={() => (
-            !this.state.readingList.length ? <h1>No comics in reading list</h1>
-            : <div>
-                <h1>Reading List</h1>
+            !this.state.readingList.length ? 
+              <div className='header-container'>
+                <h3 className='list-header'>No comics in reading list!</h3>
+              </div>
+             : 
+              <div>
+                <div className='header-container'>
+                  <h3 className='list-header'>Reading List</h3>
+                </div>
                 <AllComicsDisplay
                   comicsData={this.state.readingList}
                   readingList={this.state.readingList}
