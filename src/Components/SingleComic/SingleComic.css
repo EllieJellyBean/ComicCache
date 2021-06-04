@@ -25,6 +25,7 @@
 .reading-list {
   font-size: 13px;
   margin-left: 0.5em;
+  margin-right: 1.75em;
 }
 
 .comic-title,
@@ -36,7 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10em;
+  width: 12em;
   height: 1em;
 }
 
