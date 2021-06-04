@@ -8,22 +8,7 @@ describe('Display Homepage', () => {
           delay: 100,
           body: mockData 
         })
-    //   results: { books: [
-    //     {
-    //       'title': 'A Title',
-    //       'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421589602.jpg',
-    //       'author': 'An Author',
-    //       'description': 'An overview!'
-    //     },
-    //     {
-    //       'title': 'Different Title',
-    //       'author': 'Different Author',
-    //       'book_image': 'https://storage.googleapis.com/du-prd/books/images/9781421590158.jpg',
-    //       'description': 'Another overview!'
-    //     }
-    //   ]
-    // }
-    })
+      })
       .visit('http://localhost:3000/')
   })
 
@@ -36,20 +21,20 @@ describe('Display Homepage', () => {
   });
 
   it('should display a grid of top ranking comics', () => {
-    cy.get('.main-container').get('.comic-card').get('h2').contains('A Title')
-      .get('.comic-card').get('h2').contains('Different Title')
+    cy.get('div>h3').should('contain', 'TOP 9 THIS WEEK')
+      .get('div>section>div').should('have.length', 9)
   });
 
-  it('should have a button to add a single comic to reading list', () => {
-    cy.get('.comic-card').get('button').contains('Add to reading list').should('be.visible')
-      .click()
-  });
+  // it('should have a button to add a single comic to reading list', () => {
+  //   cy.get('.comic-card').get('button').contains('Add to reading list').should('be.visible')
+  //     .click()
+  // });
 
-  it('should display a featured comic', () => {
-    cy.get('aside').should('be.visible').contains('top pick')
-      .get('img').should('be.visible')
-      .get('p').should('be.visible').contains('A Title')
-      .get('p').should('be.visible').contains('An Author')
-      .get('.description').should('be.visible').contains('An overview!')
-  });
+  // it('should display a featured comic', () => {
+  //   cy.get('aside').should('be.visible').contains('top pick')
+  //     .get('img').should('be.visible')
+  //     .get('p').should('be.visible').contains('A Title')
+  //     .get('p').should('be.visible').contains('An Author')
+  //     .get('.description').should('be.visible').contains('An overview!')
+  // });
 });
