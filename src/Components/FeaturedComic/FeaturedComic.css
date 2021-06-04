@@ -6,7 +6,7 @@
   width: 5em;
   height: 2em;
   border-radius: 50px;
-  margin-top: 4em;
+  margin-top: 4.75em;
   background-color: #323031;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .info-container {
-  margin-top: 11em;
+  margin-top: 9em;
 }
 
 .title,
@@ -70,4 +70,15 @@
 h3 {
   font-family: 'Passion One', cursive;
   font-size: 30px;
+}
+
+@media screen and (min-width: 426px) and (max-width: 830px) {
+  .featured-comic {
+    width: 25vw;
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .featured-comic {
+  }
 }

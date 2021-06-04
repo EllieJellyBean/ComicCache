@@ -14,7 +14,7 @@ const SingleComic = ({ comic, addToList, removeFromList, isInReadingList }) => {
         </Link>
         <h2 className='comic-title'>{title}</h2>
         <div className='plus-icon-container'>
-          <i class="fas fa-plus" id={rank} onClick={addToList}></i>
+          <i className='fas fa-plus' id={rank} onClick={addToList}></i>
           <p className='reading-list'>add to reading list</p>
         </div>
       </div>
@@ -24,11 +24,12 @@ const SingleComic = ({ comic, addToList, removeFromList, isInReadingList }) => {
       <div className='comic-card'>
       <Link id={comic.rank} to={`/comic-details/${comic.rank}`} >
         <img className='comic-image' src={book_image} alt={`${title} poster`}/>
-        <h2 className='title'>{title}</h2>
+        <h2 className='comic-title'>{title}</h2>
       </Link>
-        <button id={rank} onClick={removeFromList}>
-        Remove from reading list
-        </button>
+        <div className='plus-icon-container'>
+          <i className='fas fa-minus' id={rank} onClick={removeFromList}></i>
+          <p className='reading-list'>remove from reading list</p>
+        </div>  
       </div>
     )
   }
