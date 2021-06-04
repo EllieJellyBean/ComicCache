@@ -33,7 +33,22 @@ describe('Display Homepage', () => {
       .get('.plus-icon-container > p').should('be.visible')
       .get('.comic-card:first').get('.comic-title').should('contain', 'ONE-PUNCH MAN, VOL. 10')
       .get('.plus-icon-container:first').should('contain', 'add to reading list')
-     
+  })
+
+  it('should display a featured comic', () => {
+    cy.get('.featured-comic').should('be.visible')
+        .get('.left-container').should('be.visible')
+          .should('contain', 'Akira Himekawa')
+          .should('contain', 'THE LEGEND OF ZELDA: LEGENDARY EDITION, VOL. 2')
+      .get('.right-container').should('be.visible')
+        .should('contain', 'The adaptation of several story arcs from Nintendo’s Zelda video game series continues. In this volume, the Oracle of Seasons.')
+      .get('.featured-image').should('be.visible')
+      .get('.buy-it-button').should('be.visible')
+        .should('contain', 'BUY IT')
+  })
+
+  it('should take a user to another url when BUY IT button is clicked', () => {
+    
   })
 
   // it('should have a button to add a single comic to reading list', () => {
@@ -48,4 +63,4 @@ describe('Display Homepage', () => {
   //     .get('p').should('be.visible').contains('An Author')
   //     .get('.description').should('be.visible').contains('An overview!')
   // });
-});
+})
