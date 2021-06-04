@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AllComicsDisplay from '../AllComicsDisplay/AllComicsDisplay';
 import NavBar from '../NavBar/NavBar'
-import HamburgerMenu from '../HamburgerMenu/HamburgerMenu'
+// import HamburgerMenu from '../HamburgerMenu/HamburgerMenu'
 import FeaturedComic from '../FeaturedComic/FeaturedComic'
 import ComicDetails from '../ComicDetails/ComicDetails'
 import { fetchAllComics } from '../../Utils/APICalls';
