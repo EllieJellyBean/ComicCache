@@ -31,12 +31,10 @@ class ComicDetails extends Component {
       <article className='details-display'>
         <NavLink to='/'><button data-cy='home-button' className='home-button'>Back to Home</button></NavLink>
         <div className='comic-details'>
-          <h2 data-cy='details-title' className='details-title'>{title}</h2>
           <img className='details-image' src={book_image} alt={`comic cover for ${title}`}/>
-          <h4 data-cy='comic-author' className='comic-author'>{`Author: ${author}`}</h4>
-          <h4 data-cy='comic-contributor' className='comic-contributor'>{`Contributor: ${contributor}`}</h4>
+          <h4 data-cy='comic-author' className='comic-author'>{author}</h4>
+          <h2 data-cy='details-title' className='details-title'>{title}</h2>
           <h4 data-cy='comic-publisher' className='comic-publisher'>{`Publisher: ${publisher}`}</h4>
-          <h4 className='description'>Comic Description:</h4>
           <h4 data-cy='comic-description' className='description'>{description}</h4>
           <button data-cy='list-button' id={this.state.rank} onClick={this.props.addComicToReadingList}>Add to Reading List</button>
         </div>
