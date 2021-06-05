@@ -1,7 +1,6 @@
 .comic-details {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 }
 
 .details-image {
