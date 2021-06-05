@@ -1,5 +1,11 @@
 .comic-details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+}
+
+.details-image {
+  width: 275px;
+  height: 400px;
+  align-self: center
 }
