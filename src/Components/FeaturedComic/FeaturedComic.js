@@ -12,7 +12,7 @@ const FeaturedComic = ({ featuredComic }) => {
   return (
     <aside className='featured-comic'>
       <div className='left-container'>
-        <h3 classname='top-pick'>#1 <br>
+        <h3 className='top-pick'>#1 <br>
         </br>THIS<br></br>WEEK</h3>
         <div className='info-container'>
           <p className='author'>{author}</p>
