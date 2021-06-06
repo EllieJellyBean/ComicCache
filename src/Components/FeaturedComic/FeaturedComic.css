@@ -148,4 +148,9 @@ h3 {
   .info-container {
     margin-top: 2em;
   }
+
+  .details-button {
+    margin-top: 1.5em;
+    margin-bottom: 0;
+  }
 }
