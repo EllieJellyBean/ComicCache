@@ -22,7 +22,7 @@ const SingleComic = ({ comic, addToList, removeFromList, isInReadingList }) => {
   } else {
     return (
       <div className='comic-card'>
-      <Link id={comic.rank} to={`/comic-details/${comic.rank}`} >
+      <Link style={linkStyle} id={comic.rank} to={`/comic-details/${comic.rank}`} >
         <img className='comic-image' src={book_image} alt={`${title} poster`}/>
         <h2 className='comic-title'>{title}</h2>
       </Link>
