@@ -1,24 +1,21 @@
 // using const threw errors -> Changed to let && errors resolved
 let staticCache = 'static-cache';
-let dynamicCache = `dynamicCache`;
-let fontCache = `fontCache`;
-let imageCache = `imageCache`;
 
 let staticContent = [
   '/index.html',
   '/index.js',
+  '/index.css',
   '/newicon.png',
   '/logo.png',
   '/manifest.json',
   '/robots.txt'
 ];
 
-// let imgContent = [
-// ]
-
 self.addEventListener('install', event => {
+  // sw has been installed
   self.skipWaiting()
-  console.log('installing service worker')
+  // console.log('installing service worker')
+  // building cache
   event.waitUntil(
     caches.open(staticCache).then(cache => {
       cache.addAll(staticContent).then(
@@ -26,7 +23,7 @@ self.addEventListener('install', event => {
           console.log(`${staticCache} has been updated`)
         },
         (err) => {
-          console.warn(`failed to update${staticCache}`)
+          console.warn(`failed to update ${staticCache}`)
         }
       )
     })
@@ -35,7 +32,9 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  console.log('activating');
+  // when sw has activated to replace old one
+  // console.log('activating');
+  // delete old caches
   event.waitUntil(
     caches.keys().then((keys) => {
       return Promise.all(
@@ -46,7 +45,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  console.log(`fetch request for ${event.request.url}`)
+  // console.log(`fetch request for ${event.request.url}`)
   event.respondWith(
     caches.match(event.request).then(cacheRes => {
       return cacheRes || fetch(event.request)
@@ -62,7 +61,3 @@ self.addEventListener('fetch', event => {
     })
   )
 });
-
-self.addEventListener('message', event => {
-
-})
