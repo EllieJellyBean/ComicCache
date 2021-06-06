@@ -54,6 +54,7 @@ class App extends Component {
       }
         <Switch>
         {!this.state.allComics.length && !this.state.error && <h2>Loading Content...</h2>}
+        {this.state.error && <h2>{this.state.error}</h2>}
         <Route exact path ='/'
           render={() => (
             <div className='main-container'>
