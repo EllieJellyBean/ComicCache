@@ -72,13 +72,73 @@ h3 {
   font-size: 30px;
 }
 
-@media screen and (min-width: 426px) and (max-width: 830px) {
+@media screen and (min-width: 520px) and (max-width: 975px) {
   .featured-comic {
-    width: 25vw;
-    height: 100vh;
+    width: 100%;
+  }
+
+  .buy-it-button {
+    margin-top: 0px;
+  }
+
+  .right-container {
+    width: 30em;
+  }
+
+  .featured-image {
+    margin-left: 7em;
+  }
+
+}
+@media screen and (min-width: 445px) and (max-width: 519px) {
+  .featured-comic {
+    width: 100%;
+  }
+
+  .buy-it-button {
+    margin-top: 0px;
+  }
+
+  .right-container {
+    width: 30em;
+  }
+
+  .featured-image {
+    margin-left: 3em;
+  }
+
+  .info-container {
+    margin-top: 2em;
   }
 }
-@media only screen and (max-width: 425px) {
+
+@media only screen and (max-width: 444px) {
   .featured-comic {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .buy-it-button {
+    margin-top: 0px;
+  }
+
+  .right-container {
+    width: 40vw;
+    margin-right: 10vw;
+  }
+
+  .left-container {
+    width: 25vw;
+    margin-left: 1vw;
+  }
+
+  .featured-image {
+    margin-left: 0em;
+    width: 45vw;
+    height: 60vw;
+  }
+
+  .info-container {
+    margin-top: 2em;
   }
 }
