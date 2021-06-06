@@ -90,7 +90,7 @@ h3 {
   }
 
 }
-@media screen and (min-width: 375px) and (max-width: 519px) {
+@media screen and (min-width: 445px) and (max-width: 519px) {
   .featured-comic {
     width: 100%;
   }
