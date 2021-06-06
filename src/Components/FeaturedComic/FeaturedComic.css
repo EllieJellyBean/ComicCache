@@ -111,3 +111,34 @@ h3 {
     margin-top: 2em;
   }
 }
+
+@media only screen and (max-width: 444px) {
+  .featured-comic {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .buy-it-button {
+    margin-top: 0px;
+  }
+
+  .right-container {
+    width: 40vw;
+    margin-right: 10vw;
+  }
+
+  .left-container {
+    width: 25vw;
+    margin-left: 1vw;
+  }
+
+  .featured-image {
+    margin-left: 0em;
+    width: 45vw;
+    height: 60vw;
+  }
+
+  .info-container {
+    margin-top: 2em;
+  }
+}
