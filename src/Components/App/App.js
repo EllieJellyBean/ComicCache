@@ -5,7 +5,6 @@ import ComicDetails from '../ComicDetails/ComicDetails';
 import FeaturedComic from '../FeaturedComic/FeaturedComic';
 import { fetchAllComics } from '../../Utils/APICalls';
 import { filterComicData, getFeaturedComic } from '../../Utils/cleaningFunctions';
-// import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import NavBar from '../NavBar/NavBar';
 import { Switch, Route, Link } from 'react-router-dom';
 
@@ -54,6 +53,7 @@ class App extends Component {
        :<NavBar linkStyle={linkStyle}/>
       }
         <Switch>
+        {!this.state.allComics.length && !this.state.error && <h2>Loading Content...</h2>}
         <Route exact path ='/'
           render={() => (
             <div className='main-container'>
