@@ -2,7 +2,7 @@ const cacheName = 'my-cache';
 const staticContent = [
   '/index.html',
   '/index.js',
-  '/newicon.png'
+  '/newicon.png',
 ]
 
 self.addEventListener('install', event => {
@@ -10,4 +10,9 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(cacheName).then(cache => cache.addAll(staticContent))
   )
+  .then(() => self.skipWaiting())
+})
+
+self.addEventListener('activate', event => {
+  console.log('activating');
 })
