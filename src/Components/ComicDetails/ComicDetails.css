@@ -1,11 +1,15 @@
+
 .comic-details {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  align-content: center;
 }
 
+
 .details-image {
-  width: 275px;
-  height: 400px;
+  width: 300px;
+  height: 425px;
   align-self: center
 }
 
@@ -17,3 +21,16 @@
   text-decoration: underline;
 }
 
+h4 {
+  margin: 0;
+  margin-left: 2em;
+}
+
+.details-title {
+  margin-left: 1.25em;
+}
+
+.fa-arrow-alt-circle-left {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
