@@ -25,9 +25,9 @@ class App extends Component {
     fetchAllComics()
       .then(comicsData => {
         const allComicsData = filterComicData(comicsData);
-        (typeof comicsData === 'string') ? 
+        (typeof comicsData === 'string') ?
           this.setState({ error: allComicsData }) :
-          this.setState({ allComics: allComicsData, featuredComic: allComicsData[0] 
+          this.setState({ allComics: allComicsData, featuredComic: allComicsData[0]
         })
       })
       .catch(err => this.setState({ error: 'Something went wrong. Please try again later.'} ))
@@ -71,11 +71,11 @@ class App extends Component {
         />
         <Route exact path ='/reading-list'
           render={() => (
-            !this.state.readingList.length ? 
+            !this.state.readingList.length ?
               <div className='header-container'>
                 <h3 className='list-header'>No comics in reading list!</h3>
               </div>
-             : 
+             :
               <div>
                 <div className='header-container'>
                   <h3 className='list-header'>Reading List</h3>
@@ -131,10 +131,6 @@ class App extends Component {
 
   updateSize = () => {
     this.setState({ isMobile: window.innerWidth < 975 });
-  }
-
-  showMenu = () => {
-    this.setState({ menuIsVisible: !this.state.menuIsVisible });
   }
 }
 
