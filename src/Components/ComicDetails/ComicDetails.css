@@ -34,3 +34,13 @@ h4 {
   margin-left: 0.5em;
   margin-top: 0.5em;
 }
+
+@media only screen and (max-width: 444px) {
+  .details-image {
+    margin-bottom: 1.5em;
+  }
+
+  .comic-details {
+    align-self: center;
+  }
+}
