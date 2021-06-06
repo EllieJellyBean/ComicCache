@@ -10,7 +10,7 @@ main {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   width: 55vw;
-  height: 80vh;
+  height: 75vh;
   overflow-y: scroll;
   background-color: #FFFFFF;
   margin-left: 4em;

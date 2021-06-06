@@ -1,0 +1,46 @@
+
+.comic-details {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-content: center;
+}
+
+
+.details-image {
+  width: 300px;
+  height: 425px;
+  align-self: center
+}
+
+.details-title {
+  font-family: 'Passion One', 'cursive';
+}
+
+.comic-author {
+  text-decoration: underline;
+}
+
+h4 {
+  margin: 0;
+  margin-left: 2em;
+}
+
+.details-title {
+  margin-left: 1.25em;
+}
+
+.fa-arrow-alt-circle-left {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
+
+@media only screen and (max-width: 444px) {
+  .details-image {
+    margin-bottom: 1.5em;
+  }
+
+  .comic-details {
+    align-self: center;
+  }
+}
