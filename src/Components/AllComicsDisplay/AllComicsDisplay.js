@@ -6,8 +6,9 @@ let inReadingList;
 const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }) => {
 
   const displayComics = () => {
+    const readingRank = readingList.map( comic => comic.rank)
     return comicsData.map(comic => {
-      if(readingList.includes(comic)) {
+      if(readingRank.includes(comic.rank)) {
          inReadingList = true;
       } else {
          inReadingList = false;
@@ -19,7 +20,7 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }
             comic={comic}
             addToList={addToList}
             removeFromList={removeFromList}
-            isInReadingList= {inReadingList}
+            isInReadingList={inReadingList}
           />
         )
       }
