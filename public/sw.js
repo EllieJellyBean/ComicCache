@@ -44,3 +44,25 @@ self.addEventListener('activate', event => {
     })
   )
 });
+
+self.addEventListener('fetch', event => {
+  console.log(`fetch request for ${event.request.url}`)
+  event.respondWith(
+    caches.match(event.request).then(cacheRes => {
+      return cacheRes || fetch(event.request)
+        .then(fetchResponse => {
+          console.log(`save cache files ${event.request.url}`);
+          caches.open(staticCache).then(cache => {
+            // Must clone bc we can't put it in the cache AND give
+            // it back to the browser - Can only use once!
+            cache.put(event.request, fetchResponse.clone());
+            return fetchResponse;
+          })
+        })
+    })
+  )
+});
+
+self.addEventListener('message', event => {
+
+})
