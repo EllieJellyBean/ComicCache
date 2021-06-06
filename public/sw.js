@@ -33,3 +33,14 @@ self.addEventListener('install', event => {
 
   )
 });
+
+self.addEventListener('activate', event => {
+  console.log('activating');
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.filter(key => key != staticCache).map((key) => caches.delete(key))
+      )
+    })
+  )
+});
