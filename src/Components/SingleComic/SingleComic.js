@@ -4,9 +4,9 @@ import './SingleComic.css';
 
 const SingleComic = ({ comic, addToList, removeFromList, isInReadingList }) => {
   const { title, book_image, rank } = comic;
+  const linkStyle = {textDecoration: 'none', color: 'black'};
 
   if(!isInReadingList) {
-    const linkStyle = {textDecoration: 'none', color: 'black'};
     return (
       <div className='comic-card'>
         <Link style={linkStyle}id={comic.rank} to={`/comic-details/${comic.rank}`} >
@@ -29,7 +29,7 @@ const SingleComic = ({ comic, addToList, removeFromList, isInReadingList }) => {
         <div className='plus-icon-container'>
           <i className='fas fa-minus' id={rank} onClick={removeFromList}></i>
           <p className='reading-list'>remove from reading list</p>
-        </div>  
+        </div>
       </div>
     )
   }
