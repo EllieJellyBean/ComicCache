@@ -72,7 +72,7 @@ h3 {
   font-size: 30px;
 }
 
-@media screen and (min-width: 615px) and (max-width: 975px) {
+@media screen and (min-width: 520px) and (max-width: 975px) {
   .featured-comic {
     width: 100%;
   }
@@ -90,5 +90,24 @@ h3 {
   }
 
 }
-@media only screen and (max-width: 425px) {
+@media screen and (min-width: 375px) and (max-width: 519px) {
+  .featured-comic {
+    width: 100%;
+  }
+
+  .buy-it-button {
+    margin-top: 0px;
+  }
+
+  .right-container {
+    width: 30em;
+  }
+
+  .featured-image {
+    margin-left: 7em;
+  }
+
+  .info-container {
+    margin-top: 2em;
+  }
 }
