@@ -8,3 +8,12 @@
   height: 400px;
   align-self: center
 }
+
+.details-title {
+  font-family: 'Passion One', 'cursive';
+}
+
+.comic-author {
+  text-decoration: underline;
+}
+
