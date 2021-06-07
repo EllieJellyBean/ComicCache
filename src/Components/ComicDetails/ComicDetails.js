@@ -34,7 +34,7 @@ class ComicDetails extends Component {
     return (
       <article className='details-display'>
           <NavLink to='/'>
-            <i className="fas fa-arrow-alt-circle-left fa-3x"></i>
+            <i data-cy='home-button' className="fas fa-arrow-alt-circle-left fa-3x"></i>
           </NavLink>
         <div className='comic-details'>
           <img className='details-image' src={book_image} alt={`comic cover for ${title}`}/>
