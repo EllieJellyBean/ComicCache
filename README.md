@@ -31,7 +31,7 @@ Love comics but can't think of which one to get next? Behold, Comic Cache! Comic
 * Your default browser should automatically open Comic Cache
 * 
 OR 
-* View deployed application [here](http://rancid_tomatillos.surge.sh/)
+* View deployed application [here]
 
 ### Running Tests
 
