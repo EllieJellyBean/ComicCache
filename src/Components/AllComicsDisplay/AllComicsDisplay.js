@@ -29,9 +29,6 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }
 
   return (
     <div>
-      <div className='header-container'>
-        <h3 className='top-header'>TOP 10 THIS WEEK</h3>
-      </div>
       <section className='comics-container'>
           {displayComics()}
       </section>
