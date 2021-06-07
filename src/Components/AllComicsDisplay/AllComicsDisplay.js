@@ -7,6 +7,7 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }
 
   const displayComics = () => {
     const readingRank = readingList.map(comic => comic.rank)
+    
     return comicsData.map(comic => {
       if(readingRank.includes(comic.rank)) {
          inReadingList = true;
