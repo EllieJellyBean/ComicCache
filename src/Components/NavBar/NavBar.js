@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NavBar = ({ linkStyle, featuredComicButton }) => {
   return (
     <nav>
-      <img className='icon' src='newicon.png' />
+      <img className='icon' src='newicon.png'  alt='Comic Cache red icon'/>
       <div className='link-container'>
         <Link to='/' style={linkStyle}>
           <div className='nav-icon-container'>
