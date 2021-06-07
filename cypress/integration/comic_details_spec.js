@@ -36,7 +36,7 @@ describe('Show single comic details display of Comic Cache', () => {
   });
 
   it('Should show a movie poster image on the movie details card', () => {
-    cy.get('img').should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9781421590158.jpg')
+    cy.get('img').should('have.attr', 'src', 'newicon.png')
   });
 
   it('Should possess an alt description for the screen reader or broken image', () => {
