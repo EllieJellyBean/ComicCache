@@ -4,9 +4,9 @@ import './App.css';
 import ComicDetails from '../ComicDetails/ComicDetails';
 import FeaturedComic from '../FeaturedComic/FeaturedComic';
 import { fetchAllComics } from '../../Utils/APICalls';
-import { filterComicData, getFeaturedComic } from '../../Utils/cleaningFunctions';
+import { filterComicData } from '../../Utils/cleaningFunctions';
 import NavBar from '../NavBar/NavBar';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -52,7 +52,6 @@ class App extends Component {
         <NavBar featuredComicButton={featuredComicButton} linkStyle={linkStyle}/>
        :<NavBar linkStyle={linkStyle}/>
       }
-        <Switch>
         {!this.state.allComics.length && !this.state.error && <h2>Loading Content...</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
         <Route exact path ='/'
@@ -106,7 +105,6 @@ class App extends Component {
           />
           }}
         />
-        </Switch>
       </main>
     )
   }
