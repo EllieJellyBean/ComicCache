@@ -55,5 +55,9 @@ describe('Show single comic details display of Comic Cache', () => {
   it('Should show the buy it button below the comic details card', () => {
     cy.get('[data-cy=buy-button]').should('contain', 'BUY IT');
   });
-  
+
+  it('Should be able to switch directly to the reading list from the details page', () => {
+    cy.get('[data-cy=readingList]>p').click()
+      .url().should('eq', 'http://localhost:3000/reading-list')
+  });
 });
