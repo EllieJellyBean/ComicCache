@@ -52,9 +52,8 @@ describe('Show single comic details display of Comic Cache', () => {
       .should('contain', 'Saitama sneaks into a combat tournament in order to hone his martial arts skills.')
   });
 
-  it('Should show the a back to add to reading list button above the comic details card', () => {
-    cy.get('[data-cy=list-button]').should('contain', 'Add to Reading List');
+  it('Should show the buy it button below the comic details card', () => {
+    cy.get('[data-cy=buy-button]').should('contain', 'BUY IT');
   });
-
-  // Add test here for reading list addition && error handling test
+  
 });
