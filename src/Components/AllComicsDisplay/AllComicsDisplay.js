@@ -14,7 +14,7 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }
       } else {
          inReadingList = false;
       }
-      if(comic.rank !== 1){
+      
         return (
           <SingleComic
             key={comic.rank}
@@ -24,14 +24,14 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }
             isInReadingList={inReadingList}
           />
         )
-      }
+      
     })
   }
 
   return (
     <div>
       <div className='header-container'>
-        <h3 className='top-header'>TOP 9 THIS WEEK</h3>
+        <h3 className='top-header'>TOP 10 THIS WEEK</h3>
       </div>
       <section className='comics-container'>
           {displayComics()}
