@@ -15,16 +15,15 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }
          inReadingList = false;
       }
       
-        return (
-          <SingleComic
-            key={comic.rank}
-            comic={comic}
-            addToList={addToList}
-            removeFromList={removeFromList}
-            isInReadingList={inReadingList}
-          />
-        )
-      
+      return (
+        <SingleComic
+          key={comic.rank}
+          comic={comic}
+          addToList={addToList}
+          removeFromList={removeFromList}
+          isInReadingList={inReadingList}
+        />
+      )
     })
   }
 

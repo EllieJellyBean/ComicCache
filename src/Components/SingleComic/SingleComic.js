@@ -8,12 +8,12 @@ const SingleComic = ({ comic, addToList, removeFromList, isInReadingList }) => {
 
   if(!isInReadingList) {
     return (
-      <div className='comic-card'>
+      <div data-cy='comic' className='comic-card'>
         <Link style={linkStyle}id={comic.rank} to={`/comic-details/${comic.rank}`} >
           <img className='comic-image' src={book_image} alt={`${title} poster`}/>
           <h2 className='comic-title'>{title}</h2>
         </Link>
-        <div className='plus-icon-container'>
+        <div data-cy='add-to-list' className='plus-icon-container'>
           <i className='fas fa-plus' id={rank} onClick={addToList}></i>
           <p className='reading-list'>add to reading list</p>
         </div>
@@ -21,12 +21,12 @@ const SingleComic = ({ comic, addToList, removeFromList, isInReadingList }) => {
     )
   } else {
     return (
-      <div className='comic-card'>
+      <div data-cy='comic' className='comic-card'>
       <Link style={linkStyle} id={comic.rank} to={`/comic-details/${comic.rank}`} >
         <img className='comic-image' src={book_image} alt={`${title} poster`}/>
         <h2 className='comic-title'>{title}</h2>
       </Link>
-        <div className='plus-icon-container'>
+        <div data-cy='remove-from-list'className='plus-icon-container'>
           <i className='fas fa-minus' id={rank} onClick={removeFromList}></i>
           <p className='reading-list'>remove from reading list</p>
         </div>
