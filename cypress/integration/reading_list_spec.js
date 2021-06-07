@@ -10,6 +10,7 @@ describe('Adding and removing comics from reading list', () => {
             body: mockData
           })
         })
+        .visit('http://localhost:3000/')
     })
   })
 
