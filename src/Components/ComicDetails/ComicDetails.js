@@ -29,7 +29,7 @@ class ComicDetails extends Component {
   }
 
   render() {
-    const { title, book_image, author, contributor, publisher, description, buy_links } = this.state.foundComic;
+    const { title, book_image, author, description, buy_links } = this.state.foundComic;
 
     return (
       <article className='details-display'>
