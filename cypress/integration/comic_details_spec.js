@@ -39,7 +39,7 @@ describe('Show single comic details display of Comic Cache', () => {
     cy.get('img').should('have.attr', 'src', 'newicon.png')
   });
 
-  it('Should possess an alt description for the screen reader or broken image', () => {
+  it('Poster and logo possess an alt description for the screen reader or broken image', () => {
     cy.get('img').should('have.attr', 'alt');
   });
 
