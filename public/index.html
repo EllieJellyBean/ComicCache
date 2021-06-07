@@ -19,6 +19,8 @@
         navigator.serviceWorker.ready.then(function (registration) {
           console.log('service worker ready');
         })
+      } else {
+        console.log('Service workers are not supported.');
       }
     </script>
     <!--
