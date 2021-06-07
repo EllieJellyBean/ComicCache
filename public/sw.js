@@ -27,7 +27,6 @@ self.addEventListener('install', event => {
         }
       )
     })
-
   )
 });
 
