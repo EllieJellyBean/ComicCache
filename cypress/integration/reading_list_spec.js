@@ -13,11 +13,17 @@ describe('Adding and removing comics from reading list', () => {
   })
 
 
-  it('Should should be able to render the correct button when in list even after refresh', () => {
+  it('Should should be able to render the remove from list button when in list even after refresh', () => {
       cy.get('[data-cy=add-to-list]>i').eq(0).click()
         .get('[data-cy=remove-from-list]>p').eq(0).should('contain', 'remove')
         .reload()
         .get('[data-cy=remove-from-list]>p').eq(0).should('contain', 'remove')
+  });
+
+  it('Should should be able to render the add to list button after being removed from list', () => {
+      cy.get('[data-cy=add-to-list]>i').eq(0).click()
+        .get('[data-cy=remove-from-list]>i').eq(0).click()
+        .get('[data-cy=add-to-list]>p').eq(0).should('contain', 'add')
   });
 
   it('Should be able to display added cards in the list', () => {
