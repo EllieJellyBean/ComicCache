@@ -17,9 +17,9 @@ describe('Show single comic details display of Comic Cache', () => {
   });
 
   it('Should display the nav bar on the comic details display page upon loading', () => {
-    cy.contains('nav>h1', 'comic cache')
-      .get('[data-cy=readingList]').should('contain', 'reading list')
-      .get('[data-cy=home]').should('contain', 'home')
+    cy.get('nav>img').should('be.visible')
+      .get('[data-cy=readingList]>p').should('contain', 'READING LIST')
+      .get('[data-cy=home]>p').should('contain', 'HOME')
   });
 
   it('Should only display one comic book on the details page', () => {
