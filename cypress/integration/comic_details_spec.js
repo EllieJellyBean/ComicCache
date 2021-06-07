@@ -17,9 +17,9 @@ describe('Show single comic details display of Comic Cache', () => {
   });
 
   it('Should display the nav bar on the comic details display page upon loading', () => {
-    cy.contains('nav>h1', 'comic cache')
-      .get('[data-cy=readingList]').should('contain', 'reading list')
-      .get('[data-cy=home]').should('contain', 'home')
+    cy.get('nav>img').should('be.visible')
+      .get('[data-cy=readingList]>p').should('contain', 'READING LIST')
+      .get('[data-cy=home]>p').should('contain', 'HOME')
   });
 
   it('Should only display one comic book on the details page', () => {
@@ -36,10 +36,10 @@ describe('Show single comic details display of Comic Cache', () => {
   });
 
   it('Should show a movie poster image on the movie details card', () => {
-    cy.get('img').should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9781421590158.jpg')
+    cy.get('img').should('have.attr', 'src', 'newicon.png')
   });
 
-  it('Should possess an alt description for the screen reader or broken image', () => {
+  it('Poster and logo possess an alt description for the screen reader or broken image', () => {
     cy.get('img').should('have.attr', 'alt');
   });
 
@@ -47,22 +47,21 @@ describe('Show single comic details display of Comic Cache', () => {
     cy.get('[data-cy=comic-author]').should('contain', 'ONE and Yusuke Murata')
   });
 
-  it('Should show the contributor on the comic details card', () => {
-    cy.get('[data-cy=comic-contributor]').should('contain', 'by ONE and Yusuke Murata')
-  });
-
-  it('Should show the publisher on the comic details card', () => {
-    cy.get('[data-cy=comic-publisher]').should('contain', 'VIZ Media')
-  });
-
   it('Should show the description on the comic details card', () => {
     cy.get('[data-cy=comic-description]')
       .should('contain', 'Saitama sneaks into a combat tournament in order to hone his martial arts skills.')
   });
 
-  it('Should show the a back to add to reading list button above the comic details card', () => {
-    cy.get('[data-cy=list-button]').should('contain', 'Add to Reading List');
+  it('Should show the buy it button below the comic details card', () => {
+    cy.get('[data-cy=buy-button]').should('contain', 'BUY IT');
   });
 
-  // Add test here for reading list addition && error handling test
+  it('Should take you to amazon to buy the book', () => {
+    cy.get('[data-cy=buy-button]').wait(100).click()
+  });
+
+  it('Should be able to switch directly to the reading list from the details page', () => {
+    cy.get('[data-cy=readingList]>p').click()
+      .url().should('eq', 'http://localhost:3000/reading-list')
+  });
 });
