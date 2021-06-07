@@ -41,7 +41,7 @@ class ComicDetails extends Component {
           <h4 data-cy='comic-author' className='comic-author'>{author}</h4>
           <h2 data-cy='details-title' className='details-title'>{title}</h2>
           <h4 data-cy='comic-description' className='description'>{description}</h4>
-          <button className='buy-it-button details-button' onClick={() => this.handleClick(buy_links[0].url)}>BUY IT</button>
+          <button data-cy='buy-button' className='buy-it-button details-button' onClick={() => this.handleClick(buy_links[0].url)}>BUY IT</button>
         </div>
       </article>
     )
