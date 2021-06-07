@@ -1,8 +1,5 @@
 // using const threw errors -> Changed to let && errors resolved
 let staticCache = 'static-cache';
-// let dynamicCache = 'dynamic-cache';
-// let fontsCache = 'fonts-cache';
-// let imageCache = 'image-cache';
 
 let staticContent = [
   '/',
