@@ -13,7 +13,6 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }
       } else {
          inReadingList = false;
       }
-      if(comic.rank !== 1){
         return (
           <SingleComic
             key={comic.rank}
@@ -23,7 +22,7 @@ const AllComicsDisplay = ({ comicsData, addToList, readingList, removeFromList }
             isInReadingList={inReadingList}
           />
         )
-      }
+      
     })
   }
 
