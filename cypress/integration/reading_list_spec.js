@@ -20,7 +20,7 @@ describe('Adding and removing comics from reading list', () => {
         .get('[data-cy=remove-from-list]>p').eq(0).should('contain', 'remove')
   });
 
-  it('Should be able display added cards in the list', () => {
+  it('Should be able to display added cards in the list', () => {
       cy.get('[data-cy=add-to-list]>i').eq(0).click()
         .get('[data-cy=readingList]>p').click()
         .get('[data-cy=comic]').should('contain', 'ONE-PUNCH MAN, VOL. 10')
@@ -32,6 +32,13 @@ describe('Adding and removing comics from reading list', () => {
         .get('[data-cy=readingList]>p').click()
         .get('[data-cy=comic]').should('not.exist')
         .get('div').should('contain', 'No comics in reading list!')
+  });
+
+  it('Should be able to persist the reading list on refresh', () => {
+      cy.get('[data-cy=add-to-list]>i').eq(0).click()
+        .get('[data-cy=readingList]>p').click()
+        .reload()
+        .get('[data-cy=comic]').should('contain', 'ONE-PUNCH MAN, VOL. 10')
   });
 
 });
