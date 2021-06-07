@@ -13,8 +13,17 @@ describe('Adding and removing comics from reading list', () => {
   })
 
 
-  it('Should should be able to render the correct button after being added to list', () => {
+  it('Should should be able to render the correct button when in list even after refresh', () => {
       cy.get('[data-cy=add-to-list]>i').eq(0).click()
         .get('[data-cy=remove-from-list]>p').eq(0).should('contain', 'remove')
+        .reload()
+        .get('[data-cy=remove-from-list]>p').eq(0).should('contain', 'remove')
   });
+
+  it('Should should be able display added cards in the list', () => {
+      cy.get('[data-cy=add-to-list]>i').eq(0).click()
+        .get('[data-cy=readingList]>p').click()
+        .get('[data-cy=comic]').should('contain', 'ONE-PUNCH MAN, VOL. 10')
+  });
+
 });
