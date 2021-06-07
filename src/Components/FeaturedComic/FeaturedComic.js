@@ -1,6 +1,5 @@
 import React from 'react';
 import './FeaturedComic.css';
-import { Link } from 'react-router-dom';
 
 const FeaturedComic = ({ featuredComic }) => {
   const { book_image, title, author, description, buy_links } = featuredComic;
