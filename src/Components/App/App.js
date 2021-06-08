@@ -33,8 +33,8 @@ class App extends Component {
       if (localStorage.getItem('readingList')) {
         this.setState({ readingList: JSON.parse(localStorage.getItem('readingList')) })
       }
-      window.addEventListener("resize", this.updateSize);
-      window.addEventListener("load", this.updateSize);
+      window.addEventListener('resize', this.updateSize)
+      window.addEventListener('load', this.updateSize)
   }
 
   render() {
@@ -46,8 +46,9 @@ class App extends Component {
         <p className='nav-text'>FEATURED COMIC</p>
       </div>
     </Link>
+
     return (
-      <main className="App">
+      <main className='App'>
       {this.state.isMobile ?
         <NavBar featuredComicButton={featuredComicButton} linkStyle={linkStyle}/>
        :<NavBar linkStyle={linkStyle}/>
@@ -65,7 +66,6 @@ class App extends Component {
               {!this.state.isMobile &&
                 <FeaturedComic featuredComic={this.state.featuredComic}/>
               }
-
             </div>
           )}
         />
@@ -78,7 +78,7 @@ class App extends Component {
              :
               <div>
                 <div className='header-container'>
-                  <h3 className='list-header'>Reading List</h3>
+                  <h3 className='list-header'>READING LIST</h3>
                 </div>
                 <AllComicsDisplay
                   comicsData={this.state.readingList}
@@ -95,7 +95,7 @@ class App extends Component {
             </div>
           )}
         />
-        <Route path="/comic-details/:rank" render={({ match }) => {
+        <Route path='/comic-details/:rank' render={({ match }) => {
           const { rank } = match.params;
 
           return <ComicDetails
@@ -112,14 +112,16 @@ class App extends Component {
   addComicToReadingList = (event) => {
      const readingList = this.state.readingList
      const comicToAdd = this.state.allComics.find( comic => comic.rank === parseInt(event.target.id))
-       if (!readingList.includes(comicToAdd)) {
+
+      if (!readingList.includes(comicToAdd)) {
         this.setState({readingList: [...readingList, comicToAdd]})
         setTimeout(this.setLocalStorage, 50)
+      }
   }
-}
 
   removeComicFromReadingList = (event) => {
      const filteredList = this.state.readingList.filter(comic => comic.rank !== parseInt(event.target.id));
+
      this.setState({ readingList: filteredList });
      setTimeout(this.setLocalStorage, 50)
    }

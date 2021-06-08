@@ -1,11 +1,11 @@
-.main-container {
-  display: flex;
-  height: 40vh;
-}
-
 * {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 400;
+}
+
+.main-container {
+  display: flex;
+  height: 40vh;
 }
 
 .hamburger-icon {
