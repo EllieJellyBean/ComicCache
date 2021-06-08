@@ -2,7 +2,8 @@
 let staticCache = 'static-cache';
 
 let staticContent = [
-  '/',
+  '/Utils/APICalls.js',
+  '/Utils/cleaningFunctions.js',
   '/index.html',
   '/index.js',
   '/index.css',
@@ -43,16 +44,15 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   console.log(`fetch request for ${event.request.url}`)
   event.respondWith(
-    caches.match(event.request).then(cacheRes => {
-      return cacheRes ||
-        fetch(event.request)
-          .then((fetchResponse) => {
-            caches.open(staticCache).then(cache => {
-              // Must clone bc we can't put in cache && browser
-              cache.put(event.request, fetchResponse.clone());
-              return fetchResponse;
-          })
-        })
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response
+      }
+
+      return fetch(event.request).then((newResponse) => {
+        caches.open(staticCache).then((cache) => cache.put(event.request, newResponse))
+        return newResponse.clone()
+      })
     })
   )
 });
