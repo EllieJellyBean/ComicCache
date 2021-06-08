@@ -19,6 +19,7 @@ Love comics but can't think of which one to get next? Behold, Comic Cache! Comic
 ![](https://media.giphy.com/media/zwyzBvUJp5LeNTP9VX/giphy.gif)
 
 ### Reading List
+![](https://media.giphy.com/media/hDNxf2LPTcMh6dM5b5/giphy.gif)
 
 ### Mobile
 
