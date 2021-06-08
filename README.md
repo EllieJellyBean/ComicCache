@@ -77,12 +77,16 @@ OR
 </table>
 
 
-### Wins & Challenges
+### Reflections
 
-#### Wins
+#### Evolution of the Project & Joint Reflection
+As a team, we started the project by spending some time solo studying Progressive Web Apps and how to implement them in a React project. We started creating the project as a team, using a driver/navigator style. Once we made some progress setting up the PWA, we split off and built out the React components, functionality, Cypress tests, and styling. We had daily check ins to manage the workload and decide how to distribute tasks. Most of the research we had done informed us that backloading the full implementation of the PWA is a better process, however we felt that in doing this we weren't prepared for the amount of time it takes to create a fully functional service worker. 
+
+#### Wins 
 Matt: I was excited to work on responsive design, because in previous projects this was more of a challenge, or the opportunity hadn't presented itself in group settings. I also enjoyed getting more practice with conditional rendering.
 Ellie: I was glad that I had the opportunity to navigate the errors with our PWA implementation. I feel like I learned a lot from looking into the error messages. I'm also happy to have had more practice with React.
 Michann: I'm pretty proud of us for working together so well, staying calm when things weren't going as smoothly as anticipated, and for teaching ourselves a new technology in a short amount of time. 
 
 #### Challenges
 We all feel that understanding how and when the service worker communicates and interacts with the rest of the application was pretty challenging. We ran into quite a few issues with caching, and getting the service worker registered to begin with. We also felt that the documentation for PWAs (more specifically, service workers) was a little inconsistent, which made troubleshooting complicated at times. 
+
