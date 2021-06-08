@@ -13,10 +13,10 @@ Love comics but can't think of which one to get next? Behold, Comic Cache! Comic
 
 
 ### Main Page
-![](https://media.giphy.com/media/rRLoJIIMR6FnxLL307/giphy.gif)
+![](https://media.giphy.com/media/5oM2TAZ5GqjZLLDqsn/giphy.gif)
 
 ### Comic Details 
-![](https://media.giphy.com/media/zwyzBvUJp5LeNTP9VX/giphy.gif)
+![](https://media.giphy.com/media/SyfdSP6STzNl1LMsuU/giphy.gif)
 
 ### Reading List
 ![](https://media.giphy.com/media/hDNxf2LPTcMh6dM5b5/giphy.gif)
