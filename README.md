@@ -24,7 +24,7 @@ Love comics but can't think of which one to get next? Behold, Comic Cache! Comic
 ### Mobile
 
 ### Accessibility Audit
-<img width="614" alt="Screen Shot 2021-06-07 at 6 55 18 PM" src="https://user-images.githubusercontent.com/76269802/121105786-ffd9a000-c7c1-11eb-91be-44767e66b993.png">
+<img width="414" alt="Screen Shot 2021-06-07 at 6 55 18 PM" src="https://user-images.githubusercontent.com/76269802/121105786-ffd9a000-c7c1-11eb-91be-44767e66b993.png">
 
 ### Setup
 * From your terminal, clone this repository
