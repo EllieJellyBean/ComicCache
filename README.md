@@ -22,6 +22,7 @@ Love comics but can't think of which one to get next? Behold, Comic Cache! Comic
 ![](https://media.giphy.com/media/hDNxf2LPTcMh6dM5b5/giphy.gif)
 
 ### Mobile
+![](https://media.giphy.com/media/PVH6j3qlFMr9l3lhuQ/giphy.gif)
 
 ### Accessibility Audit
 <img width="414" alt="Screen Shot 2021-06-07 at 6 55 18 PM" src="https://user-images.githubusercontent.com/76269802/121105786-ffd9a000-c7c1-11eb-91be-44767e66b993.png">
@@ -36,7 +37,7 @@ Love comics but can't think of which one to get next? Behold, Comic Cache! Comic
 
 OR
 
-* View deployed application [here]
+* View deployed application [here](https://comic-cache.herokuapp.com)
 
 ### Running Tests
 * Once in project directory, run `npx cypress open` 
@@ -79,6 +80,9 @@ OR
 ### Wins & Challenges
 
 #### Wins
-
+Matt: I was excited to work on responsive design, because in previous projects this was more of a challenge, or the opportunity hadn't presented itself in group settings. I also enjoyed getting more practice with conditional rendering.
+Ellie: I was glad that I had the opportunity to navigate the errors with our PWA implementation. I feel like I learned a lot from looking into the error messages. I'm also happy to have had more practice with React.
+Michann: I'm pretty proud of us for working together so well, staying calm when things weren't going as smoothly as anticipated, and for teaching ourselves a new technology in a short amount of time. 
 
 #### Challenges
+We all feel that understanding how and when the service worker communicates and interacts with the rest of the application was pretty challenging. We ran into quite a few issues with caching, and getting the service worker registered to begin with. We also felt that the documentation for PWAs (more specifically, service workers) was a little inconsistent, which made troubleshooting complicated at times. 
