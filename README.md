@@ -33,8 +33,9 @@ Love comics but can't think of which one to get next? Behold, Comic Cache! Comic
 * Run `$npm install` to install dependencies
 * Run `$npm start`
 * Your default browser should automatically open Comic Cache
-*
+
 OR
+
 * View deployed application [here]
 
 ### Running Tests
