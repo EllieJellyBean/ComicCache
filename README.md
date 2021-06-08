@@ -38,12 +38,12 @@ OR
 * View deployed application [here]
 
 ### Running Tests
-* Follow the first 3 steps for setup 
-* Run `npx cypress open` 
+* Once in project directory, run `npx cypress open` 
 * In the `integration` directory, click on the file you'd like to see the testing for. 
-* A Cypress window should open and automatically run the tests 
-
-
+* A Cypress window should open
+* Open dev tools in the Cypress window 
+* Go to the Application tab, and check 'Bypass for network' under Service Worker 
+* Re-run tests  
 
 ### Technologies
 <p>
