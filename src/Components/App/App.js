@@ -78,7 +78,7 @@ class App extends Component {
              :
               <div>
                 <div className='header-container'>
-                  <h3 className='list-header'>Reading List</h3>
+                  <h3 className='list-header'>READING LIST</h3>
                 </div>
                 <AllComicsDisplay
                   comicsData={this.state.readingList}
