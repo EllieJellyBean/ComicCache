@@ -13,16 +13,18 @@ Love comics but can't think of which one to get next? Behold, Comic Cache! Comic
 
 
 ### Main Page
-![](https://media.giphy.com/media/rRLoJIIMR6FnxLL307/giphy.gif)
+![](https://media.giphy.com/media/5oM2TAZ5GqjZLLDqsn/giphy.gif)
 
 ### Comic Details 
-![](https://media.giphy.com/media/zwyzBvUJp5LeNTP9VX/giphy.gif)
+![](https://media.giphy.com/media/SyfdSP6STzNl1LMsuU/giphy.gif)
 
-### Buy It!
+### Reading List
+![](https://media.giphy.com/media/hDNxf2LPTcMh6dM5b5/giphy.gif)
 
 ### Mobile
 
 ### Accessibility Audit
+<img width="414" alt="Screen Shot 2021-06-07 at 6 55 18 PM" src="https://user-images.githubusercontent.com/76269802/121105786-ffd9a000-c7c1-11eb-91be-44767e66b993.png">
 
 ### Setup
 * From your terminal, clone this repository
@@ -31,12 +33,18 @@ Love comics but can't think of which one to get next? Behold, Comic Cache! Comic
 * Run `$npm install` to install dependencies
 * Run `$npm start`
 * Your default browser should automatically open Comic Cache
-*
+
 OR
+
 * View deployed application [here]
 
 ### Running Tests
-
+* Once in project directory, run `npx cypress open` 
+* In the `integration` directory, click on the file you'd like to see the testing for. 
+* A Cypress window should open
+* Open dev tools in the Cypress window 
+* Go to the Application tab, and check 'Bypass for network' under Service Worker 
+* Re-run tests  
 
 ### Technologies
 <p>
